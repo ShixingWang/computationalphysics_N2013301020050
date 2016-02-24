@@ -4,4 +4,4 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 ## Homework 作业
 To be continued...
 ## Update Log of the Repository 更新日志
--2016.02.24   Repository established
+- 2016.02.24   Repository established
