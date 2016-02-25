@@ -26,8 +26,8 @@ make install`
 
 ## 安装成功
 在终端输入`python`，若出现以下字样
->Python 2.7.11 (default, Feb 25 2016, 15:39:54) 
-[GCC 5.3.1 20151207 (Red Hat 5.3.1-2)] on linux2
+>Python 2.7.11 (default, Feb 25 2016, 15:39:54) <br>
+[GCC 5.3.1 20151207 (Red Hat 5.3.1-2)] on linux2 <br>
 Type "help", "copyright", "credits" or "license" for more information.
 
 则说明安装成功
