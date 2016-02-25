@@ -1,6 +1,6 @@
 # 在Fedora 23 系统下安装Python 2.7.11
 *for genuine novices about Linux and Python* <br>
-*写这种教程的人是不是很傻_(:з」∠)_ *
+*写这种教程的人是不是很傻* *_(:з」∠)_*
 ## 下载Python 2.7.11
 没有用命令行那么高端的办法，直接在浏览器中输入下面的网址:
 [https://www.python.org/downloads/release/python-2711/](https://www.python.org/downloads/release/python-2711/)
