@@ -4,7 +4,7 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 ## Homework 作业
 To be continued...
 ## Sources 资源
-[如何在Fedora23中安装Python2.7.11](https://github.com/ShixingWang/computationalphysics_N2013301020050/Fedora23.Python.2_7_11.md)
+[如何在Fedora23中安装Python2.7.11](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Fedora23.Python.2_7_11.md)
 ## Changelog 更新日志
 - 2016.02.24   
 
@@ -12,4 +12,4 @@ To be continued...
 
 - 2016.02.25
 
-  上传["如何在Fedora23中安装Python2.7.11"](https://github.com/ShixingWang/computationalphysics_N2013301020050/Fedora23.Python.2_7_11.md)
+  上传["如何在Fedora23中安装Python2.7.11"](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Fedora23.Python.2_7_11.md)
