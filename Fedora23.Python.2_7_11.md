@@ -13,9 +13,9 @@
 这是为了查看压缩包的文件名，我的是“Python-2.7.11.gtz”
 - 输入`tar –zxvf Python-2.7.11.gtz`，等待命令行 <del> _抽疯 </del> 反应
 - 依次输入下面的命令进行安装：
-`./configure <br>
-make <br>
-make install`
+`./configure` <br>
+`make` <br>
+`make install`
 
 注意“/configure“前面有英文句号，否则报错。
 ## "no acceptable C compiler found in $PATH"错误
