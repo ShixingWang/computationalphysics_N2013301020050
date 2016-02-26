@@ -15,3 +15,7 @@ How to install Python 2.7.11 on Fedora 23 <br>
 - 2016.02.25
 
   上传《如何在Fedora23中安装Python2.7.11》
+
+- 2016.02.26
+
+  整理软件池，试验StackEdit导入功能、文档内插入目录功能
