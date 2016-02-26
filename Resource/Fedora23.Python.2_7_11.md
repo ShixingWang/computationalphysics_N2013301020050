@@ -2,6 +2,8 @@
 *for genuine novices about Linux and Python* <br>
 *写这种教程的人是不是很傻* *_(:з」∠)_*
 
+<font size=8>目录 </font> <br>
+
 [toc]
 
 ## 下载Python 2.7.11
