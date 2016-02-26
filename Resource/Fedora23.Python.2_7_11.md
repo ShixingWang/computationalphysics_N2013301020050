@@ -38,7 +38,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 
-## Reference
+## 参考资料
 1. “如何在linux系统中安装python?”-百度知道 
 	[http://zhidao.baidu.com/link?url=f8BF3Cah5RBhKd-EqoQsUbe-3MMRbyVFq2My39o5Dx6G5K8XfdbOTee6BXNtOpBmGyLuwUXvyQo6rF_MjoliFK](http://zhidao.baidu.com/link?url=f8BF3Cah5RBhKd-EqoQsUbe-3MMRbyVFq2My39o5Dx6G5K8XfdbOTee6BXNtOpBmGyLuwUXvyQo6rF_MjoliFK)
 2. "no acceptable C compiler found in $PATH'解决手记'" -上学吧 
