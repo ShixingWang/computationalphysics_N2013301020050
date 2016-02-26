@@ -8,14 +8,15 @@
 ## 解压缩及安装
 - 打开terminal（方法1：鼠标指向左上角“活动”，在屏幕中间搜索栏中输入'terminal'；方法2：鼠标指向左上角“活动”，点击左边栏最下“显示所有程序”-“工具”-“终端”）
 - 依次输入
-`cd /home/$用户名/download`
-`ls -al`
+`cd /home/$用户名/download`<br>
+`ls -al`<br>
 这是为了查看压缩包的文件名，我的是“Python-2.7.11.gtz”
-- 输入`tar –zxvf Python-2.7.11.gtz`，等待命令行 <del> 抽疯 </del> 反应
+- 输入`tar –zxvf Python-2.7.11.gtz`，等待命令行 <del> _抽疯 </del> 反应
 - 依次输入下面的命令进行安装：
-`./configure
-make
+`./configure <br>
+make <br>
 make install`
+
 注意“/configure“前面有英文句号，否则报错。
 ## "no acceptable C compiler found in $PATH"错误
 在上一步make环节可能会卡住，终端提示"no acceptable C compiler found in $PATH"，出现这一错误是因为电脑未安装C编译器，解决方法如下：
