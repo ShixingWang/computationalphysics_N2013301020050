@@ -12,7 +12,7 @@
 `ls -al`<br>
 这是为了查看压缩包的文件名，我的是“Python-2.7.11.gtz”
 - 输入`tar –zxvf Python-2.7.11.gtz`，等待命令行 <del> _抽疯 </del> 反应
-- 依次输入下面的命令进行安装：
+- 依次输入下面的命令进行安装： <br>
 `./configure` <br>
 `make` <br>
 `make install`
