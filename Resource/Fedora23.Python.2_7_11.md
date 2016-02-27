@@ -2,7 +2,7 @@
 *for genuine novices about Linux and Python* <br>
 *写这种教程的人是不是很傻* *_(:з」∠)_*
 
-<font size=8> 目录 </font> <br>
+<font size="8"> 目录 </font> <br>
 
 [toc]
 
@@ -12,7 +12,7 @@
 点击前两个链接之一（我只试过第二个），等待下载完成，默认路径应该是/home/$用户名/download
 ## 解压缩及安装
 - 打开terminal（方法1：鼠标指向左上角“活动”，在屏幕中间搜索栏中输入'terminal'；方法2：鼠标指向左上角“活动”，点击左边栏最下“显示所有程序”-“工具”-“终端”）
-- 依次输入
+- 依次输入 <br>
 `cd /home/$用户名/download`<br>
 `ls -al`<br>
 这是为了查看压缩包的文件名，我的是“Python-2.7.11.gtz”
