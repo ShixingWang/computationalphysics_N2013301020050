@@ -54,7 +54,7 @@ Here is the screen print of the python on the terminal of Fedora.
 
 
 
-
+For more details about how to install Python 2.7 on Fedora, see [this](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Resource/Fedora23.Python.2_7_11.md)
 
 
 
