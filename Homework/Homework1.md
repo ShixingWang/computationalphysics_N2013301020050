@@ -1,3 +1,0 @@
-# Homework 1
-This file is to test the "publish" function in StackEdit.
-To be continued...
