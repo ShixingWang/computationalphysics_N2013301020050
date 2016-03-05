@@ -52,7 +52,7 @@ Here is the screen print of the Anaconda on Windows 10
 
 Here is the screen print of the python on the terminal of Fedora.
 
-
+![2_1](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/2_1.png)
 
 For more details about how to install Python 2.7 on Fedora, see [this](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Resource/Fedora23.Python.2_7_11.md)
 
