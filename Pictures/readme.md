@@ -1,1 +1,1 @@
-This is a readme file created to establish the /Pictures/. 
+This folder comtains pictures used in the repository.
