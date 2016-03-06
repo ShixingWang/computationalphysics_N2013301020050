@@ -8,6 +8,8 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 
 - Exercise 1 on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise1.md) and on [作业部落](https://www.zybuluo.com/ShixingWang/note/302740)
 
+- Exercise 2 on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise2.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/303533)
+
 To be continued...
 
 ## Resources 资源
