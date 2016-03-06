@@ -17,15 +17,6 @@ To be continued...
 How to install Python 2.7.11 on Fedora 23 <br>
 [如何在Fedora23中安装Python2.7.11](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Resource/Fedora23.Python.2_7_11.md)
 
-## Changelog 更新日志
-- 2016.02.24   
+## VIM-written Section as part of Exercise 2
 
-  建立软件池<br>更新README文档
-
-- 2016.02.25
-
-  上传《如何在Fedora23中安装Python2.7.11》
-
-- 2016.02.26
-
-  整理软件池，试验StackEdit导入功能、文档内插入目录功能
+It is part of Exercise 2 to write the README.md file with VIM. So I added this section as a practice of the VIM editor and the git on Linux. Also the former "Changelog" section has been deleted. (It is  really a hard work to follow each change and update them in the Changelog... OTZ) And this is shown in [Exercise 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise2.md) in the form of a screen shot. 
