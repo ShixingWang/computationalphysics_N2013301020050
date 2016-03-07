@@ -17,7 +17,7 @@ If your Linux does not wupport python, you can...
 
 - Try what [this website](http://blog.csdn.net/wanyanxgf/article/details/8021641) teaches you to do.
 
-In the guidelines above they mentioned the configure of Linux, for more information, you can check [this site](http://zhidao.baidu.com/link?url=LJJ93ZKSJh5jlmrRsDmCbIN_cTcmjUpPJ77pDID5nz1QZ83xsD0ApGViu0eBMmbS7OTcqeZs9QfnOFvMEUKIi_) and [this site](http://www.chinaz.com/server/2009/0807/85792.shtml)
+  In the guidelines above they mentioned the configure of Linux, for more information, you can check [this site](http://zhidao.baidu.com/link?url=LJJ93ZKSJh5jlmrRsDmCbIN_cTcmjUpPJ77pDID5nz1QZ83xsD0ApGViu0eBMmbS7OTcqeZs9QfnOFvMEUKIi_) and [this site](http://www.chinaz.com/server/2009/0807/85792.shtml)
 
 - I tried this two guidelines above but is did not work. The final solution was that I tried the Fedora forum's solution [here](http://pkgs.org/fedora-23/fedora-x86_64/python-libs-2.7.10-8.fc23.x86_64.rpm.html) with only a one-line code
 
@@ -96,7 +96,7 @@ If you installed Vundle, besides the step above, add this into your `~/.vimrc` b
 
 > Bundle 'ron89/thesaurus_query.vim '
  
-And run VIM in the terminal, in the general mode, input `:PlugInstall`
+And run VIM in the terminal, in the general mode, input `:BundleInstall`
 
 And everything _should_ be ready.
 
