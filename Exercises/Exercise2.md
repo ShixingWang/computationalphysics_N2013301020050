@@ -2,13 +2,28 @@
 
 # Exercise 2
 
-## 
-
 ## 1. Install the Thesaurus_query Plugin on VIM
 
 Many difficulties flushed when I tried to install this plguin. Now I will communicate briefly how I managed to intall it and provide possible solutions to the difficulties.
 
-- Install Pathogen
+### Ensure the Python Support
+
+This plugin requires the support of Python. To check if your python support such funcitons, you can do as this [blog](
+http://www.tuicool.com/articles/jYvMFv) and this [answer on Stack Overflow}(http://stackoverflow.com/questions/20160902/how-to-solve-requires-python-2-x-support-in-linux-vim-and-it-have-python-2-6-6) say.
+
+If your Linux does not wupport python, you can...
+
+- Reinstall Python with the parameter `--enable-pythoninterp=yes`
+
+- Try what [this website](http://blog.csdn.net/wanyanxgf/article/details/8021641) teaches you to do.
+
+In the guidelines above they mentioned the configure of Linux, for more information, you can check [this site](http://zhidao.baidu.com/link?url=LJJ93ZKSJh5jlmrRsDmCbIN_cTcmjUpPJ77pDID5nz1QZ83xsD0ApGViu0eBMmbS7OTcqeZs9QfnOFvMEUKIi_) and [this site](http://www.chinaz.com/server/2009/0807/85792.shtml)
+
+- I tried this two guidelines above but is did not work. The final solution was that I tried the Fedora forum's solution [here](http://pkgs.org/fedora-23/fedora-x86_64/python-libs-2.7.10-8.fc23.x86_64.rpm.html) with only a one-line code
+
+`sudo yum install python-lib`
+
+### Install Pathogen
 
 Pathogen is a popular plugin manager famous for the simplicity in Windows environment, which was my first choice to manege the thesaurus_query plugin.
 
@@ -67,13 +82,15 @@ And in `~/.vimrc` add the following
 
 The details for installing is [here](https://github.com/VundleVim/Vundle.vim).
 
-- Install Thesaurus_query Plugin
+### Install Thesaurus_query Plugin
 
 If you installed Pathegen, then
 
 `git clone https://github.com/ron89/thesaurus_query.vim ~/.vim/bundle/thesaurus_query.vim`
 
 and it _should_ be over.
+
+### Install the Plugin
 
 If you installed Vundle, besides the step above, add this into your `~/.vimrc` between  `call vundle#begin()` and `call vundle#end()`
 
