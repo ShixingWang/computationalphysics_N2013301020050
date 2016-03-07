@@ -9,7 +9,7 @@ Many difficulties flushed when I tried to install this plguin. Now I will commun
 ### Ensure the Python Support
 
 This plugin requires the support of Python. To check if your python support such funcitons, you can do as this [blog](
-http://www.tuicool.com/articles/jYvMFv) and this [answer on Stack Overflow}(http://stackoverflow.com/questions/20160902/how-to-solve-requires-python-2-x-support-in-linux-vim-and-it-have-python-2-6-6) say.
+http://www.tuicool.com/articles/jYvMFv) and this [answer on Stack Overflow](http://stackoverflow.com/questions/20160902/how-to-solve-requires-python-2-x-support-in-linux-vim-and-it-have-python-2-6-6) say.
 
 If your Linux does not wupport python, you can...
 
