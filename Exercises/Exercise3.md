@@ -120,11 +120,11 @@ At last it is time to show each line on the screen.
 
 ### Level 1. Show my Name on the Screen
 
-![3_1]()
+![3_1](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/3_1.png)
 
 ### Level 2. Show Arbitrary Characters on the Screen
 
-![3_2]()
+![3_2](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/3_2.png)
 
 Notice that our program can adjust the number of characters in each line and change lines if the string is too long.
 
@@ -162,7 +162,7 @@ At the last few lines
 
 > \____ os.system('cls')
 
-![3_3]()
+![3_3](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/3_3.gif)
 
 ## Discussion and Future Direction
 
