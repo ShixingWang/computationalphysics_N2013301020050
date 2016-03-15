@@ -10,7 +10,8 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 
 - Exercise 2 on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise2.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/303533)
 
-- Exercise 3 on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise3.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/311331)
+- Exercise 3 written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/edit/master/Exercises/Exercise3_new.ipynb)<br>
+   old version on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise3.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/311331)
 
 To be continued...
 
