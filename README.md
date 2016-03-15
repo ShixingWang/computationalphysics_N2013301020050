@@ -6,12 +6,22 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 
 ## Homework 作业
 
-- Exercise 1 on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise1.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/302740)
+### Exercise 1 
 
-- Exercise 2 on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise2.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/303533)
+on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise1.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/302740)
 
-- Exercise 3 written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/edit/master/Exercises/Exercise3_new.ipynb)<br>
-   old version on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise3.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/311331)
+### Exercise 2 
+
+on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise2.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/303533)
+
+### Exercise 3 
+written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/edit/master/Exercises/Exercise3_new.ipynb)
+
+old version on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise3.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/311331)
+
+#### Codes
+
+[Level 1 and 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level12_new.py) [Level 3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level3_new.py) [old version of level 1 and2]() [old version of level3]()
 
 To be continued...
 
