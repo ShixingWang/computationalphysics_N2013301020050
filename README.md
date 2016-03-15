@@ -21,7 +21,7 @@ old version on [Github](https://github.com/ShixingWang/computationalphysics_N201
 
 #### Codes
 
-[Level 1 and 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level12_new.py) [Level 3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level3_new.py) [old version of level 1 and2]() [old version of level3]()
+|[Level 1 and 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level12_new.py) |[Level 3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level3_new.py)| [old version of level 1 and2]() |[old version of level3]()
 
 To be continued...
 
