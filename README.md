@@ -19,7 +19,7 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
     [old version of level 1 and 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level12_old.py)<br>
     [old version of level3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level3_old.py)
 
-* Exercise written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise4.ipynb)
+* Exercise 4 written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise4.ipynb)
 
 
 To be continued...
