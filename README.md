@@ -22,7 +22,7 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 * Exercise 4 written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise4.ipynb)<br>
   The Markdown edition on ["作业部落"](https://www.zybuluo.com/ShixingWang/note/321753)
   
-  +Codes<br>
+  + Codes<br>
     [Ordinary Differential Equation](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_equation.py)<br>
     [Subplots](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_subplot.py)
 To be continued...
