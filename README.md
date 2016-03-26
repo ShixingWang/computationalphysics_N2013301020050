@@ -1,68 +1,42 @@
 ﻿# Shixing Wang's Repository for Computational Physics
 
-
-
-- 王世兴       
-- 2013301020050       
-
+__13级弘毅班__
+__王世兴__       
+__2013301020050__       
 
 ## A Brief Introduction 简介
 
-
-
-
 This repository is for the Computational Physics course by Prof. Cai from Wuhan University in the spring semester of 2016. Most algrithms will be realized by Python. Homeworks and other stuff I learn from this course will be included. Citing and revising of my codes are allowed based on the acknowledgement of my contribution. Giving advice and pointing out errors will be appreciated. You can contract me at wangshixing[at]whu.edu.cn
-
-
-
 
 ## Homework 作业
 
+* Exercise 1: Installing Environments for Python        
+    on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise1.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/302740)
 
+* Exercise 2: Say hello to VIM and its plugins        
+    on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise2.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/303533)
 
-
-* Exercise 1 on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise1.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/302740)
-
-
-
-
-* Exercise 2 on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise2.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/303533)
-
-
-
-
-* Exercise 3 written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/edit/master/Exercises/Exercise3_new.ipynb)<br>
-
+* Exercise 3: Patterns on a Screen        
+    written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/edit/master/Exercises/Exercise3_new.ipynb)      
   old version on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise3.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/311331)
 
-
-
-
   + Codes<br>
-
     [Level 1 and 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level12_new.py)<br>
-
-    [Level 3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level3_new.py)<br> 
-
+    [Level 3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level3_new.py)     
     [old version of level 1 and 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level12_old.py)<br>
-
     [old version of level3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level3_old.py)
 
+* Exercise 4: Problem 1.5 -  
+    Notebook written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise4.ipynb)     
+    The Markdown edition on [作业部落](https://www.zybuluo.com/ShixingWang/note/321753)     
+    + Codes     
+    [Ordinary Differential Equation](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_equation.py)     
+    [Subplots](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_subplot.py)     
 
-
-
-* Exercise 4 written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise4.ipynb)<br>
-
-  The Markdown edition on ["作业部落"](https://www.zybuluo.com/ShixingWang/note/321753)
-
-  
-
-  + Codes<br>
-
-    [Ordinary Differential Equation](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_equation.py)<br>
-
-    [Subplots](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_subplot.py)
-
+* Exercise 5: Problem 1.6 - Population Growth      
+    Mardown editon on [Github]() and [作业部落](https://www.zybuluo.com/ShixingWang/note/326064)    
+    + Codes     
+        [raw]()
 To be continued...
 
 
