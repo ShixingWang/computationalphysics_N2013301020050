@@ -15,10 +15,15 @@ is always hindered with error report. You can download the package from the [off
 ### Pickle      
 Storing results is a critical step in a physics computation. Although this was emphasized in the previous exercise report, it was not presented in the codes for the lack of knowledge about the `pickle` module. [\[3\]](https://www.zybuluo.com/ShixingWang/note/321753) The `pickle` module is one that can "create portable serialized representations of Python objects". [\[4\]](https://docs.python.org/2/reference/) More information can be found on IPython when you input `import pickle` and `pickle?`. With this we can output the data we get into a file and reload later.       
 ## Programs     
-
+To practise the object-oriented paradigm we include the main body of the program into the class `population_growth`, in which there are four parts coorespongding with the initialization of variables and parameters, calculation, and restoring and representing of results.       
 The code is uploaded to [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise5_first.py).      
 ## Discussion     
+### Comparasion with Analytical Solution
+For a first-order ordinary differential equation with the form in the problem        
+![](http://latex.codecogs.com/gif.latex?\begin{array}{ll}\frac{dN(t)}{dt}=aN(t)-bN^2(t)\\N(0)=N_0\end{array})
+
 ## Acknowledgement     
+
 ## Reference     
 + [1] Wikipedia contributors. "Object-oriented programming." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 25 Mar. 2016. Web. 27 Mar. 2016.     
 + [2] VPython, 3D Programming for Ordinary Mortals. http://www.vpython.org/, March 27, 2016.      
