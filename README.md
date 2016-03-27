@@ -11,14 +11,14 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 ## Homework 作业
 
 * Exercise 1: Installing Environments for Python        
-    on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise1.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/302740)
+    on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise1.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/302740)
 
 * Exercise 2: Say hello to VIM and its plugins        
-    on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise2.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/303533)
+    on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise2.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/303533)
 
 * Exercise 3: Patterns on a Screen        
-    written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/edit/master/Reports/Exercise3_new.ipynb)      
-  old version on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise3.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/311331)
+    written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/edit/master/Exercises/Exercise3_new.ipynb)      
+  old version on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise3.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/311331)
 
   + Codes<br>
     [Level 1 and 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level12_new.py)<br>
@@ -26,15 +26,15 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
     [old version of level 1 and 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level12_old.py)<br>
     [old version of level3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise2_level3_old.py)
 
-* Exercise 4: Problem 1.5 -  
-    Notebook written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise4.ipynb)     
+* Exercise 4: Problem 1.5 - Double Decay 
+    Notebook written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise4.ipynb)     
     The Markdown edition on [作业部落](https://www.zybuluo.com/ShixingWang/note/321753)     
     + Codes     
     [Ordinary Differential Equation](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_equation.py)     
     [Subplots](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_subplot.py)     
 
 * Exercise 5: Problem 1.6 - Population Growth      
-    Mardown editon on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise5.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/326064)    
+    Mardown editon on [Github]() and [作业部落](https://www.zybuluo.com/ShixingWang/note/326064)    
     + Codes     
         [raw]()
 To be continued...

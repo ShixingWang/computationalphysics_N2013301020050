@@ -1,4 +1,4 @@
-
+﻿
 
 
 
@@ -12,7 +12,7 @@
 
 
 
-# Exercise 1
+# Exercise 1 - Installing Environments for Python
 
 
 
@@ -22,19 +22,11 @@
 
 Here's a screen print of the Fedora 23 system that is a double boot with Windows 10.
 
-
 ![picture1](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/fedoraDoubleBoot.png)
-
-
-
 
 Here's a screen print of the Fedora 23 system that is on the virtual machine.
 
 ![picture2](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/LinuxVirtualMachine.PNG)
-
-
-
-
 
 ## 2. Install the Python 2.7 Environment
 
@@ -44,17 +36,12 @@ Here is the screen print of the Anaconda on Windows 10
 
 ![picture3](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/Anaconda.png)
 
-
-
-
-
-
-
 Here is the screen print of the python on the terminal of Fedora.
 
 ![2_1](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/2_1.png)
 
 For more details about how to install Python 2.7 on Fedora, see [this](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Resource/Fedora23.Python.2_7_11.md)
+
 
 
 
@@ -66,11 +53,12 @@ Here is a link to [my Github page](https://github.com/ShixingWang)
 
 
 
-Here is a screen shot showing that I have followed  
-
-[caihao/computational\_physics\_whu](https://github.com/caihao/computational_physics_whu)
+Here is a screen shot showing that I have followed  [caihao/computational\_physics\_whu](https://github.com/caihao/computational_physics_whu)
 
 ![picture4](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/followRepository.png)
+
+
+
 
 
 
