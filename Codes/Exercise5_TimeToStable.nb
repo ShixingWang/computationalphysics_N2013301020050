@@ -1,0 +1,206 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7197,        197]
+NotebookOptionsPosition[      6771,        177]
+NotebookOutlinePosition[      7114,        192]
+CellTagsIndexPosition[      7071,        189]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"y", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"a", " ", "N0", " ", 
+     RowBox[{"Exp", "[", 
+      RowBox[{"a", " ", "x"}], "]"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{"a", "-", 
+     RowBox[{"b", " ", "N0"}], " ", "+", 
+     RowBox[{"b", " ", "N0", " ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{"a", " ", "x"}], "]"}]}]}], ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"y", "[", "x", "]"}], ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.668140857982452*^9, 3.6681409621053786`*^9}, {
+  3.6681556160224133`*^9, 3.6681556815885115`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["a", "2"], " ", "b", " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", " ", "a", " ", "x"}]], " ", 
+     SuperscriptBox["N0", "2"]}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"a", "-", 
+       RowBox[{"b", " ", "N0"}], "+", 
+       RowBox[{"b", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"a", " ", "x"}]], " ", "N0"}]}], ")"}], "2"]]}], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["a", "2"], " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"a", " ", "x"}]], " ", "N0"}], 
+   RowBox[{"a", "-", 
+    RowBox[{"b", " ", "N0"}], "+", 
+    RowBox[{"b", " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"a", " ", "x"}]], " ", "N0"}]}]]}]], "Output",
+ CellChangeTimes->{3.668155650342111*^9, 3.668155681844209*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox["a", "2"], " ", "b", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"2", " ", "a", " ", "x"}]], " ", 
+          SuperscriptBox["N0", "2"]}], 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"a", "-", 
+            RowBox[{"b", " ", "N0"}], "+", 
+            RowBox[{"b", " ", 
+             SuperscriptBox["\[ExponentialE]", 
+              RowBox[{"a", " ", "x"}]], " ", "N0"}]}], ")"}], "2"]]}], "+", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["a", "2"], " ", 
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"a", " ", "x"}]], " ", "N0"}], 
+        RowBox[{"a", "-", 
+         RowBox[{"b", " ", "N0"}], "+", 
+         RowBox[{"b", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"a", " ", "x"}]], " ", "N0"}]}]]}], ")"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "5"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0.0001", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"b", ",", "0.0001", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"N0", ",", "0", ",", "1000"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.668155687748744*^9, 3.668155807924594*^9}, {
+   3.668155843762851*^9, 3.668155968954342*^9}, 3.6681561098861265`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{CloudObject`Private`a$$ = Null, CloudObject`Private`b$$ =
+     0.5, CloudObject`Private`N0$$ = 3., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[CloudObject`Private`a$$], 0.0001, 100}, {
+      Hold[CloudObject`Private`b$$], 0.0001, 1}, {
+      Hold[CloudObject`Private`N0$$], 0, 1000}}, Typeset`size$$ = {
+    300., {85., 89.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, CloudObject`Private`a$22679$$ = 0, 
+    CloudObject`Private`b$22680$$ = 0, CloudObject`Private`N0$22681$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       CloudObject`Private`a$$ = 0.0001, CloudObject`Private`b$$ = 0.0001, 
+        CloudObject`Private`N0$$ = 0}, "ControllerVariables" :> {
+        Hold[CloudObject`Private`a$$, CloudObject`Private`a$22679$$, 0], 
+        Hold[CloudObject`Private`b$$, CloudObject`Private`b$22680$$, 0], 
+        Hold[CloudObject`Private`N0$$, CloudObject`Private`N0$22681$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[-(CloudObject`Private`a$$^2 CloudObject`Private`b$$ 
+          E^(2 CloudObject`Private`a$$ CloudObject`Private`x) 
+          CloudObject`Private`N0$$^2/(CloudObject`Private`a$$ - 
+           CloudObject`Private`b$$ CloudObject`Private`N0$$ + 
+           CloudObject`Private`b$$ 
+            E^(CloudObject`Private`a$$ CloudObject`Private`x) 
+            CloudObject`Private`N0$$)^2) + 
+        CloudObject`Private`a$$^2 
+         E^(CloudObject`Private`a$$ CloudObject`Private`x) 
+         CloudObject`Private`N0$$/(CloudObject`Private`a$$ - 
+         CloudObject`Private`b$$ CloudObject`Private`N0$$ + 
+         CloudObject`Private`b$$ 
+          E^(CloudObject`Private`a$$ CloudObject`Private`x) 
+          CloudObject`Private`N0$$), {CloudObject`Private`x, 0, 5}], 
+      "Specifications" :> {{CloudObject`Private`a$$, 0.0001, 100}, {
+        CloudObject`Private`b$$, 0.0001, 1}, {
+        CloudObject`Private`N0$$, 0, 1000}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{351., {195., 202.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.6681557014444923`*^9, 3.668155734284655*^9, {3.6681557912342243`*^9, 
+   3.6681558088852315`*^9}, 3.668155858878517*^9, {3.6681559414572706`*^9, 
+   3.668155970412162*^9}, 3.6681561110862565`*^9}]
+}, Open  ]]
+},
+WindowSize->{473, 609},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (October 9, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 642, 18, 72, "Input"],
+Cell[1225, 42, 875, 26, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2137, 73, 1493, 40, 168, "Input"],
+Cell[3633, 115, 3122, 59, 447, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

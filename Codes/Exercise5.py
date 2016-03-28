@@ -64,12 +64,35 @@ class population_growth:
         ylabel = vs.label(text = "Population", pos = (-5, 5, 0))
         while 1:
             pass
-            
-pop=population_growth(1000,100,0.01,0.01,0.1)
+
+
+plt.title("Population Growth")
+
+p1=plt.subplot(131)            
+pop=population_growth(100,10,0.05,0.001,3)
 pop.calculate()
 pop.plot2D()
 pop.analytical()
       
-plt.title("Population Growth")
-plt.legend('right',frameon=False)
+p1.set_title("dt=0.001")
+p1.legend(loc='right',frameon=False)
+# ------------------------- 1st subplot above----------------------------------
+p2=plt.subplot(132)            
+pop=population_growth(100,10,0.05,0.01,3)
+pop.calculate()
+pop.plot2D()
+pop.analytical()
+      
+p2.set_title("dt=0.01")
+p2.legend(loc='right',frameon=False)
+# ------------------------- 2nd subplot above----------------------------------
+p3=plt.subplot(133)            
+pop=population_growth(100,10,0.05,0.1,3)
+pop.calculate()
+pop.plot2D()
+pop.analytical()
+      
+p3.set_title("dt=0.1")
+p3.legend(loc='right',frameon=False)
+# ------------------------- 3rd subplot above----------------------------------
 plt.show()
