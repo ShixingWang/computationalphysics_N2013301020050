@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
-import packle
+# import packle
 import visual as vs
-import easygui
+# import easygui
 
 class population_growth:
     """
@@ -13,6 +13,8 @@ class population_growth:
         self.b=b
         self.dt=dt
         self.time=time
+        self.N=[self.N0]
+        self.t=[0]
         return None
 
     def __str__(self):
@@ -20,22 +22,22 @@ class population_growth:
         return message
 
     def calculate(self):
-        self.N=[self.N0]
-        self.t=[0]
         length=int(self.time/self.dt)
         for cycle in range(length):
-            newN=self.N[cycle]+(self.a*self.N[cycle]-self.b*(self.N[cycle])^2)*self.dt
-            newTime=self.t[cycle]+self.dt            
-            self.N.append(newN)
-            self.t.append(newTime)
+            self.newN=self.N[cycle]+(self.a*self.N[cycle]-self.b*(self.N[cycle])**2)*self.dt
+            self.newTime=self.t[cycle]+self.dt            
+            self.N.append(self.newN)
+            self.t.append(self.newTime)
+        return self.N,self.t
 
     def plot2D(self):
-        plt.plot(self.T, self.n_uranium, '-*')
+        plt.plot(self.t, self.N, '-*')
         plt.title("Population Growth")
         plt.xlabel("time[s]")
         plt.ylabel("Population")
         plt.show()
         plt.savefig("PopulationGrowth")
+        return 0
         
     def plot3D(self):
         axis_length = 10.0
@@ -49,4 +51,6 @@ class population_growth:
         while 1:
             pass
             
-        
+fig=population_growth(1000,100,0.01,0.0001,0.1)
+fig.calculate()
+fig.plot3D()       
