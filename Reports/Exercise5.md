@@ -5,6 +5,9 @@
 ## Abstract     
 A population growth problem is investigated about the linear birth rate and a quadratic death rate. Compared with the similar problem in the [previous exercise](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_equation.py), a new program finished in an object-oriented way is presented, in which the four steps a reader-friendly program should have are presented in a natural way as four internal functions of the class. Also the 3-D plotting is practiced with the importing of `visual` package.     
 ## Background     
+### Population     
+The population problem has been a worldwide one for quite a long time while it casts various chanllenges to different regions in the world. In highly developed countries, the negative growth rate has cause heavy pressure for employment and policies for migrations, while in the third world where the major increase of population happens, the increased population neutralized the growth of gross domestic products. At present there are approximately 7.312 billion people in the world, based on the estimation of the United States Census Bureau.[\[1\]](https://en.wikipedia.org/wiki/Population) And according to the National Bureau of Statistics of People's Republic of China, there are about 1.37 billion people in China.[\[2\]](http://www.stats.gov.cn/) This country is confronted with the problem of both a large number and a rapid decrease of youth population due to the "family plan".       
+
 ### Object Oriented Programming     
 Object-oriented programming is a program paradigm based on the concept "class". [\[1\]](https://en.wikipedia.org/w/index.php?title=Object-oriented_programming&oldid=711907543) A class is an abstract of several objects sharing the same characteristics and behaviors. In Python it can be treated as a data type. It is only required in this course to master the definition and single inheritance of the class.       
 ### VPython     
@@ -26,6 +29,8 @@ $$N(t)=\frac{N_0ae^{at}}{a-bN_0+bN_0e^{at}}$$
 ## Acknowledgement     
 I must appreciate Prof. Cai for the usage of `pickle` and `visual`. That part of the program are cloned from the sample codes on [Prof. Cai's Repository](https://github.com/caihao/computational_physics_whu.git).      
 ## Reference     
++ [1] Wikipedia contributors. "Population. " Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 26 Mar. 2016. Web. 28 Mar. 2016.       
++ [2] The official page of National Bureau of Statistics of People's Republic of China, at http://www.stats.gov.cn/
 + [1] Wikipedia contributors. "Object-oriented programming." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 25 Mar. 2016. Web. 27 Mar. 2016.     
 + [2] VPython, 3D Programming for Ordinary Mortals. http://www.vpython.org/, March 27, 2016.      
 + [3] Shixing Wang. Exercise 4: Problem 1.5 - Double Decay. https://Github/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise4.md, March 27, 2016.        
