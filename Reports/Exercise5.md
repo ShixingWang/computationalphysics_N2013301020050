@@ -1,4 +1,4 @@
-﻿written with [作业部落](https://www.zybuluo.com/ShixingWang/note/326064)
+﻿View this Report on [作业部落](https://www.zybuluo.com/ShixingWang/note/326064)
 
 # Exercise 5: Problem 1.6 - Population Growth
 [toc]
@@ -22,7 +22,7 @@ The code is uploaded to [Github](https://github.com/ShixingWang/computationalphy
 For a first-order ordinary differential equation with the form in the problem        
 $$\begin{array}{ll}\frac{dN(t)}{dt}=aN(t)-bN^2(t)\\N(0)=N_0\end{array}$$
 and the solution can be figured out through the method of elementary integrals and the solution is
-$$N(t)=\frac{N_0ae^{ax}}{a-bN_0+bN_0e^{ax}}$$
+$$N(t)=\frac{N_0ae^{at}}{a-bN_0+bN_0e^{at}}$$
 ## Acknowledgement     
 I must appreciate Prof. Cai for the usage of `pickle` and `visual`. That part of the program are cloned from the sample codes on [Prof. Cai's Repository](https://github.com/caihao/computational_physics_whu.git).      
 ## Reference     
