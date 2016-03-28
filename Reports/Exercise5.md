@@ -24,21 +24,31 @@ To practise the object-oriented paradigm we include the main body of the program
 The code is uploaded to [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise5_first.py).      
 ### Comparasion with Analytical Solution
 For a first-order ordinary differential equation with the form in the problem        
-$$\begin{array}{ll}\frac{dN(t)}{dt}=aN(t)-bN^2(t)\\N(0)=N_0\end{array}$$
+![](http://latex.codecogs.com/gif.latex?\begin{array}{ll}\frac{dN(t)}{dt}=aN(t)-bN^2(t)\\N(0)=N_0\end{array})
+
 and the solution can be figured out through the method of elementary integrals and the solution is
-$$N(t)=\frac{N_0ae^{at}}{a-bN_0+bN_0e^{at}}$$
+
+![](http://latex.codecogs.com/gif.latex?N(t)=\frac{N_0ae^{at}}{a-bN_0+bN_0e^{at}})
+
 Here we choose several time step length and show them with the analytical solutions.
-![5_1]()       
+
+![5_1](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/5_1.PNG)       
 ### Limit Behavior     
 From the analytical solution above we find an interesting fact that the final steady state is determined only by the ratio of the birth and death rate, independent from the initial number.
-$$\lim_{t\to\infty}N(t)=\frac{a}{b}$$
-So by adjusting the parameters we can have
-![5_2]()
+
+![](http://latex.codecogs.com/gif.latex?\lim_{t\to\infty}N(t)=\frac{a}{b})
+
+So by adjusting the parameters we can have three different behavior of the system: increase, decrease, unchange.
+
+![5_2](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/5_2.PNG)
 ### Time Needed to Stablize     
 By calculating the derivative versus time
-$$\frac{dN(t)}{dt}=\frac{(a-bN_0)a^2N_0e^{at}}{(a-bN_0+bN_0e^{at})^2}$$
-As we can see, this is tightly related with the choice of parameters. And here is a [Mathematica project](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise5_TimeToStable.nb) in which you can manipulate the parameters and see its behavior.      
-![5_3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Pictures/5_3.png)      
+
+![](http://latex.codecogs.com/gif.latex?\frac{dN(t)}{dt}=\frac{(a-bN_0)a^2N_0e^{at}}{(a-bN_0+bN_0e^{at})^2})
+
+As we can see, this is tightly related with the choice of parameters. And here is a [Mathematica project](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise5_TimeToStable.nb) in which you can manipulate the parameters and see its behavior.
+
+![5_3](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/5_3.PNG)      
 ## Discussion 
 
 ## Acknowledgement     
