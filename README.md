@@ -1,6 +1,6 @@
 ﻿# Shixing Wang's Repository for Computational Physics
 
-__13级弘毅班__        
+__13级弘毅班__
 __王世兴__       
 __2013301020050__       
 
@@ -17,7 +17,7 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
     on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise2.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/303533)
 
 * Exercise 3: Patterns on a Screen        
-    written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/edit/master/Reports/Exercise3_new.ipynb)      
+    written with [Jupyter](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise3_new.ipynb)      
   old version on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise3.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/311331)
 
   + Codes<br>
@@ -34,9 +34,10 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
     [Subplots](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_subplot.py)     
 
 * Exercise 5: Problem 1.6 - Population Growth      
-    Mardown editon on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Exercises/Exercise5.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/326064)    
+    Mardown editon on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise5.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/326064)    
     + Codes     
-        [Exercise5.py](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise5.py)      
+        [raw](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise5.py)       
+
 To be continued...
 
 

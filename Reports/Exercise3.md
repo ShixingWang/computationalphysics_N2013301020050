@@ -2,7 +2,6 @@
 
 # Exercise 3 - Patterns on a Screen
 
-[toc]
 
 ## Abstract
 
