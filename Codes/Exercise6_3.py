@@ -1,4 +1,5 @@
 import math
+import numpy.random as ran
 import matplotlib.pyplot as plt
 # import modules
 g=9.8
@@ -23,8 +24,11 @@ class cannon0:
         self.dt=0.01
         return None
     # external force other than gravity, no force in simplest case        
-    def F(self,vx,vy,y=1):
+    def f(self,vx,vy,y=1):
         return 0,0
+    # for simplicity of probability of air drag
+    def F(self):
+        return 
     # calculate the flying trajactory
     def fly(self):
         self.X=[self.x0]
@@ -81,8 +85,22 @@ class cannon3(cannon0):
         self.Fx=-B2m*vx*vl*(1-a*y/T0)**alpha
         self.Fy=-B2m*vy*vl*(1-a*y/T0)**alpha
         return self.Fx,self.Fy
-
+class cannon4(cannon0):
+    "the model concerning ADIABATIC air density variance as well as UNIFORM probability distribution" 
+    def __init__(self,v0,theta,yFinal=0):
+        self.x0=0
+        self.y0=0
+        self.yFinal=yFinal
+        self.v0=ran.uniform(0.95*v0,1.05*v0)
+        self.Theta=ran.uniform(0.99*theta,1.01*theta)
+        self.theta=self.Theta*math.pi/180
+        self.vx0=self.v0*math.cos(self.theta)
+        self.vy0=self.v0*math.sin(self.theta)
+        self.dt=0.01
+        return None
+    
 # select the angle casting the largest distance
+aim=int(raw_input("The distance from the goal to the cannon: "))
 Distance=[]
 for i in range(90):
     A=cannon3(20,i)
