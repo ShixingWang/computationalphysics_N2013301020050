@@ -1,6 +1,6 @@
 ﻿# Shixing Wang's Repository for Computational Physics
 
-__13级弘毅班__
+__13级弘毅班__       
 __王世兴__       
 __2013301020050__       
 
