@@ -34,9 +34,16 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
     [Subplots](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise4_Chapter1_5_subplot.py)     
 
 * Exercise 5: Problem 1.6 - Population Growth      
-    Mardown editon on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise5.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/326064)    
+    Markdown editon on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise5.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/326064)    
     + Codes     
         [raw](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise5.py)       
+
+* Exercise 6: Crazy Cannon            
+    Markdown editon on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise6.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/333176)    
+    + Codes     
+        [Level 1](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise6.py)     
+        [Level 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise6_2.py)     
+        [Level 3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise6_3.py)     
 
 To be continued...
 
