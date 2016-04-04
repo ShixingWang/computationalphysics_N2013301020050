@@ -47,20 +47,21 @@ The rotation of Earth is so slow that we can ignore the effect of Coriolis effce
 
 The Paris Gun (German: Paris-Geschütz) was the name given to a type of German long-range siege gun, several of which were used to bombard Paris during World War I. The shells of such guns were first human-made objects that reached stratosphere. The Paris gun was used to shell Paris at a range of 120 km. The distance was so far that the Coriolis effect was substantial enough to affect trajectory calculations. After World War I, the gun was firbidden by the Treaty of Versailles, but under the funding of Nazi, Krupp continued the study of such weapons and K12 Gun was deployed in the World War II.
 
-![6_2](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/6_2.jpg)
+![6_2](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/6_2.jpg)     
 In the picture is the K12 gun set to the attack position.
 ## Results
 ### Trajectory for Various Cannons
 ![6_3](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/6_3.png)
 The figure above shows the trajectory with the initial velocity of 600m/s and initial angle 45 degrees. 
 
-The cannon with largest range is the one with no air drag, then isothermal air drag, adiabatic air drag, and finally uniform air drag.      
-| Condition | Distance [m] |Relative Distance|
+The cannon with largest range is the one with no air drag, then isothermal air drag, adiabatic air drag, and finally uniform air drag.  
+
+| Condition | Distance [m] | Relative Distance |
 |-----|-----|-----|
-| No air drag: |36734.7|100%|      
-| Uniform air drag:|18459.2|50.5%|      
-| Isothermal air drag:|  22927.0| 62.4%|   
-| Adiabatic air drag:|   19801.7|53.9%    
+| No air drag |36734.7|100%|      
+| Uniform air drag|18459.2|50.5%|      
+| Isothermal air drag|22927.0| 62.4%|   
+| Adiabatic air drag|19801.7|53.9%|    
 
 As for the curve at the beginning, it is most noticable that the curve with isothermal air drag is even higher than that with no air drag. This is reasonable because the total external force in the isothermal condition that is vertical to the direction of the velocity is smaller than that with no air drag, 
 
@@ -70,10 +71,10 @@ We used algorithems introduced in the `Discussion` section to obtain the angle t
 
 | Condition | Max Angle [degree] |
 |-----|-----|
-| No air drag: |45.0|      
-| Uniform air drag:|40.0|      
-| Isothermal air drag:|45.0|    
-| Adiabatic air drag:|42.0|      
+| No air drag |45.0|      
+| Uniform air drag|40.0|      
+| Isothermal air drag|45.0|    
+| Adiabatic air drag|42.0|      
 
 In the picture we plotted trajectories of the maximum angle and the ones having 10 degrees variance with the maximum angle.
 
