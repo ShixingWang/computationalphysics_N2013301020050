@@ -103,7 +103,7 @@ class cannon40(cannon0):
 aim=int(raw_input("The distance from the goal to the cannon: "))
 Distance=[]
 for i in range(90):
-    A=cannon3(20,i)
+    A=cannon2(20,i)
     A.fly()
     newDistance=A.distance()
     Distance.append(newDistance)
