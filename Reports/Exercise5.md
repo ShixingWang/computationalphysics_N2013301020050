@@ -32,7 +32,7 @@ $$\begin{array}{ll}\frac{dN(t)}{dt}=aN(t)-bN^2(t)\\N(0)=N_0\end{array}$$
 
 and the solution can be figured out through the method of elementary integrals and the solution is
 
-$$N(t)=\frac{N_0ae^{at}}{a-bN_0+bN_0e^{at}}$$
+![](http://latex.codecogs.com/gif.latex?N(t)=\frac{N_0ae^{at}}{a-bN_0+bN_0e^{at}})
 
 We can add a function in the class `population_growth` and plot the analytical solution altogether with the numerical solutions. Here we choose several time step length and show them with the analytical solutions.
 
@@ -40,7 +40,7 @@ We can add a function in the class `population_growth` and plot the analytical s
 ### Limit Behavior     
 From the analytical solution above we find an interesting fact that the final steady state is determined only by the ratio of the birth and death rate, independent from the initial number.
 
-$$\lim_{t\to\infty}N(t)=\frac{a}{b}$$
+![](http://latex.codecogs.com/gif.latex?\lim_{t\to\infty}N(t)=\frac{a}{b})
 
 So by adjusting the parameters we can have three different behavior of the system: increase, decrease, unchange.
 
@@ -48,7 +48,7 @@ So by adjusting the parameters we can have three different behavior of the syste
 ### Time Needed to Stablize     
 By calculating the derivative versus time
 
-$$\frac{dN(t)}{dt}=\frac{(a-bN_0)a^2N_0e^{at}}{(a-bN_0+bN_0e^{at})^2}$$
+![](http://latex.codecogs.com/gif.latex?\frac{dN(t)}{dt}=\frac{(a-bN_0)a^2N_0e^{at}}{(a-bN_0+bN_0e^{at})^2})
 
 As we can see, this is tightly related with the choice of parameters. And here is a [Mathematica project](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise5_TimeToStable.nb) in which you can manipulate the parameters and see its behavior.
 
