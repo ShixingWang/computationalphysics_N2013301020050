@@ -85,7 +85,7 @@ class cannon3(cannon0):
         self.Fx=-B2m*vx*vl*(1-a*y/T0)**alpha
         self.Fy=-B2m*vy*vl*(1-a*y/T0)**alpha
         return self.Fx,self.Fy
-class cannon4(cannon0):
+class cannon40(cannon0):
     "the model concerning ADIABATIC air density variance as well as UNIFORM probability distribution" 
     def __init__(self,v0,theta,yFinal=0):
         self.x0=0

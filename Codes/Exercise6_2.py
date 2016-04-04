@@ -52,13 +52,12 @@ class cannon0:
     # get the final distance shells can reach
     def distance(self):
         return self.X[-1]
+    def height(self):
+        return max(self.Y)
     # represent trajectory 
     def plot(self, color):
-#        col=str(color)
-#        plt.plot(X,Y)
-        plt.plot(self.X,self.Y,color,label="$v_0=%dm/s$,$\psi=%d\degree$"%(self.v0,self.Theta))
+        plt.plot(self.X,self.Y,color,label="$%dm/s$,$%d\degree$, no air drag"%(self.v0,self.Theta))
         return 0
-
 class cannon1(cannon0):
     "the second simplest model with no air drag under constant air density, no probability distribution"    
     # external force other than gravity        
@@ -67,6 +66,9 @@ class cannon1(cannon0):
         self.Fx=-B2m*vx*vl
         self.Fy=-B2m*vy*vl
         return self.Fx,self.Fy
+    def plot(self, color):
+        plt.plot(self.X,self.Y,color,label="$%dm/s$,$%d\degree$, uniform air drag"%(self.v0,self.Theta))
+        return 0
 class cannon2(cannon0):
     "the model concerning ISOTHERMAL air density variance but no probability distribution"
     def F(self,vx,vy,x=1,y=1):
@@ -74,6 +76,9 @@ class cannon2(cannon0):
         self.Fx=-B2m*vx*vl*math.exp(-y/y_zero)
         self.Fy=-B2m*vy*vl*math.exp(-y/y_zero)
         return self.Fx,self.Fy
+    def plot(self, color):
+        plt.plot(self.X,self.Y,color,label="$%dm/s$,$%d\degree$, isothermal air drag"%(self.v0,self.Theta))
+        return 0
 class cannon3(cannon0):
     "the model concerning ADIABATIC air density variance but no probability distribution"    
     def F(self,vx,vy,y=1):
@@ -81,11 +86,15 @@ class cannon3(cannon0):
         self.Fx=-B2m*vx*vl*(1-a*y/T0)**alpha
         self.Fy=-B2m*vy*vl*(1-a*y/T0)**alpha
         return self.Fx,self.Fy
+    def plot(self, color):
+        plt.plot(self.X,self.Y,color,label="$%dm/s$,$%d\degree$, adiabatic air drag"%(self.v0,self.Theta))
+        return 0
 
 # select the angle casting the largest distance
+
 Distance=[]
 for i in range(90):
-    A=cannon3(20,i)
+    A=cannon0(20,i)
     A.fly()
     newDistance=A.distance()
     Distance.append(newDistance)
@@ -93,6 +102,26 @@ maxDistance=max(Distance)
 maxAngle=Distance.index(maxDistance)
 print maxAngle
 
-A.plot('blue')    
+A=cannon0(600,45)
+A.fly()
+A.plot('red')    
+
+
+B=cannon1(600,45)
+B.fly()
+B.plot('green')    
+
+
+C=cannon2(600,45)
+C.fly()
+C.plot('blue')    
+
+
+D=cannon3(600,45)
+D.fly()
+D.plot('purple') 
+
+plt.xlabel("Distance[m]")
+plt.ylabel("Hieght[m]")   
+plt.legend(loc="upper right",frameon=False)
 plt.show()
-#plt.legend(loc='upper right', frameon=False)
