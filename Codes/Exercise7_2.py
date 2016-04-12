@@ -1,6 +1,6 @@
 import math
 import matplotlib.pyplot as plt
-import visual as vis
+from visual import *
 # import modules
 g=9.8
 B2m=0.00004
@@ -12,18 +12,18 @@ alpha=2.5
 class cannon0:
     "the simplest model with no air drag, no air density variance, no probability distribution"
     # initialize variables    
-    def __init__(self,v0,theta,yFinal=0):
+    def __init__(self,v0,theta,zFinal=0):
         self.x0=0
         self.y0=0
         self.z0=0
-        self.yFinal=yFinal
+        self.zFinal=zFinal
         self.v0=v0
         self.Theta=theta
         self.theta=theta*math.pi/180
         self.vx0=self.v0*math.cos(self.theta)
         self.vy0=self.v0*math.sin(self.theta)
         self.vz0=0
-        self.dt=0.01
+        self.dt=0.05
         return None
     # external force other than gravity, no force in simplest case        
     def F(self,vx,vy,y=1):
@@ -37,10 +37,10 @@ class cannon0:
         self.Vy=[self.vy0]
         self.Vz=[self.vz0]
         self.T=[0]
-        while not (self.Y[-1]<self.yFinal and self.Vy[-1]<0):
+        while (self.Z[-1] >= self.zFinal):
             newVx=self.Vx[-1]+self.F(vx=self.Vx[-1],vy=self.Vy[-1])[0]*self.dt
-            newVy=self.Vy[-1]-g*self.dt+self.F(self.Vx[-1],self.Vy[-1])[1]*self.dt
-            newVz=self.Vz[-1]+self.F(vx=self.Vx[-1],vy=self.Vy[-1])[2]*self.dt
+            newVz=self.Vy[-1]-g*self.dt+self.F(self.Vx[-1],self.Vy[-1])[1]*self.dt
+            newVy=self.Vz[-1]+self.F(vx=self.Vx[-1],vy=self.Vy[-1])[2]*self.dt
             self.Vx.append(newVx)
             self.Vy.append(newVy)
             self.Vz.append(newVz)
@@ -56,8 +56,9 @@ class cannon0:
             self.Z.append(newZ)
         # fix the final landing coordinate        
 #        r=-self.Y[-2]/self.Y[-1]
-        self.X[-1]=((self.Y[-2]-self.yFinal)*self.X[-1]+(self.yFinal-self.Y[-1])*self.X[-2])/(self.Y[-2]-self.Y[-1])
-        self.Y[-1]=self.yFinal
+        self.X[-1]=((self.Z[-2]-self.zFinal)*self.Z[-1]+(self.zFinal-self.Z[-1])*self.X[-2])/(self.Z[-2]-self.Z[-1])
+        self.Z[-1]=self.zFinal
+        print len(self.Vx)
         return 0
     # get the final distance shells can reach
     def distance(self):
@@ -71,18 +72,16 @@ class cannon0:
     def plot3D(self):
         return 0
     def plotVisual(self):
-        axis_length = 10.0
-        xaxis = vis.arrow(pos = (0, 0, 0), axis = (axis_length, 0, 0), shaftwidth = 0.01)
-        yaxis = vis.arrow(pos = (0, 0, 0), axis = (0, axis_length, 0), shaftwidth = 0.01)
-        zaxis = vis.arrow(pos = (0, 0, 0), axis = (0, 0, axis_length), shaftwidth = 0.01)
-        balls = []
-        for i in range(len(self.X)):
-            balls.append(vis.sphere(pos = (self.X[i],self.Y[i],self.Z[i]), radius = 0.2, color = vis.color.red))
-        xlabel = vis.label(text = "x", pos = (0, 0, 0), axis = (100,0,0))
-        ylabel = vis.label(text = "y", pos = (0, 0, 0), axis = (0,100,0))
-        zlabel = vis.label(text = 'z', pos = (0, 0, 0), axis = (0,0,100))
-        while 1:
-            pass
+        ball=sphere(pos=(self.X[0],self.Y[0],self.Z[0]),radius=200,color=color.yellow,make_trail=True)
+        t=0
+        delta=0.01
+        i=0
+        while ball.pos.z>=self.zFinal:
+            rate(100)
+            ball.velocity=vector(self.Vx[i],10*self.Vy[i],self.Vz[i])
+            ball.pos=ball.pos+ball.velocity*delta
+            t=t+delta
+            i+=1
 
         
 class cannon1(cannon0):
@@ -120,4 +119,11 @@ class cannon3(cannon0):
 # select the angle casting the largest distance
 A=cannon0(600,45)
 A.fly()
-A.plot('blue')
+arrow(pos = (0, 0, 0), axis = (10000, 0, 0), shaftwidth = 30, color = color.blue)
+label(text = 'Horizontal distance', pos = (10000, 0, 0))
+arrow(pos = (0, 0, 0), axis = (0, 10000, 0), shaftwidth = 30, color = color.blue)
+label(text = 'Vertical distance', pos = (0, 10000, 0))
+arrow(pos = (0, 0, 0), axis = (0, 0, 10000), shaftwidth = 30, color = color.blue)
+label(text = 'Z axis', pos = (0, 0, 10000))
+while True:
+    A.plotVisual()

@@ -67,13 +67,30 @@ class baseball:
         return max(self.Y)
     # represent trajectory 
     def plot(self, color):
-        plt.plot(self.X,self.Y,color,label="$%dm/s$,$%d\degree$, no air drag"%(self.v0,self.Theta))
+        plt.plot(self.X,self.Y,color,label="$%dm/s$,$%d\degree$, with backspin"%(self.v0,self.Theta))
         return 0
 
+class baseball1(baseball):
+    "the second simplest model with no air drag under constant air density, no probability distribution"    
+    # external force other than gravity        
+    def F(self,vx,vy,y=1):
+        vxy=math.sqrt(vx**2+vy**2)
+        Fx=-self.B2m(vxy)*math.sqrt((vx-v_wind)**2+vy**2)*(vx-v_wind)
+        Fy=-self.B2m(vxy)*math.sqrt((vx-v_wind)**2+vy**2)*vy
+        return Fx,Fy
+    def plot(self, color):
+        plt.plot(self.X,self.Y,color,label="$%dm/s$,$%d\degree$, no backspin"%(self.v0,self.Theta))
+        return 0
+        
 # select the angle casting the largest distance
 A=baseball(45,45)
 A.fly()
 A.plot('red')
+
+A=baseball1(45,45)
+A.fly()
+A.plot('blue')
+plt.legend(loc='upper right',frameon=False)
 plt.show()
 
 #print A.distance()
