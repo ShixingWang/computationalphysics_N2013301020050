@@ -41,15 +41,15 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 * Exercise 6: Crazy Cannon            
     Markdown editon on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise6.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/333176)    
     + Codes     
-        [Level 1](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise6.py)     
-        [Level 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise6_2.py)     
-        [Level 3](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise6_3.py)     
+        [Level 1: Simple Cannon Shell](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise6.py)     
+        [Level 2: Various Heights of Goals](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise6_2.py)     
+        [Level 3: Error of Shot](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise6_3.py)     
 
 * Exercise 7: Backspin of Baseball and 3D Cannon Shell            
     Markdown editon on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise7.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/339854)    
     + Codes     
-        [Level 1](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise7.py)     
-        [Level 2](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise7_2.py)     
+        [Level 1: Backspin of Batted Baseball](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise7.py)     
+        [Level 2: Visualization of Cannon Shell](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise7_2.py)     
 
 To be continued...
 
