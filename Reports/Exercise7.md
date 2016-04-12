@@ -46,6 +46,7 @@ In the code we treat the air drag coefficient as a function of velocity and comp
 ### Level 2: Visualization
 [Source code](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise7_2.py)      
 In this program we use the Coriolis force in the form of the equations provided in the `Background` section and the air drag same as those in [Exercise 6](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise6.md)
+
 ![7_2](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/7_3.gif)
 
 And we used `python-visual` to visualize the motion of the cannon shell. The animation of the shell is realized through the internel attribution `sphere.velocity` where we use the velocity calculated in the internal function `cannon0.fly()`. 
