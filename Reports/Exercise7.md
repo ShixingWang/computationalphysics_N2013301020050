@@ -37,10 +37,26 @@ In the last program we have assumed that the air drag is propotional to the squa
 $$\frac{B_2}{m}=0.0039+\frac{0.0058}{1+e^{(v-v_d)/\Delta}}$$
 where $v_d=35m/s$ and $\Delta=5m/s$, the numbers above are in the SI unit.
 ## Results
-### Level 1: Problem 2.19
-### Level 2: Visualization
-## Discussion
+### Level 1: Problem 2.19      
+[Source code](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise7.py)       
+In the code we treat the air drag coefficient as a function of velocity and compare the effect with that without backspin. Under the initial condition given (a velocity of 45 m/s and shooting angle of 45 degrees), the baseball with backspin has a higher maximum height and a longer range.
 
+![7_2](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/7_2.png)
+
+### Level 2: Visualization
+[Source code](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise7_2.py)      
+In this program we use the Coriolis force in the form of the equations provided in the `Background` section and the air drag same as those in [Exercise 6](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise6.md)
+![7_2](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/7_3.gif)
+
+And we used `python-visual` to visualize the motion of the cannon shell. The animation of the shell is realized through the internel attribution `sphere.velocity` where we use the velocity calculated in the internal function `cannon0.fly()`. 
+
+One thing that need notice is that the default coordinate in `python-visual` is the one with y-axis as the axis showing the altitude, and x, y, z forms a right-handed frame. However, in this program I used the conventional one in which z-axis scales the altitude. This is only a rotation of coordinates.
+
+## Acknowledgement
+
++ 本次level 2结果来自吴威鹏同学的能正常运行python-visual的ubuntu虚拟机文件，在此表示感谢；同时感谢陈锋同学分享这一虚拟机文件
+
++ 感谢陈锋同学在我的电脑无法运行python-visual时帮忙运行并修改错误。
 ## Reference     
 + [1] Adair, R.K. The Physics of Baseball. Harpercollins. Jan, 1990
 
