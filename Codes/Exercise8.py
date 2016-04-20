@@ -77,10 +77,10 @@ B.sway()
 print B.period()
 '''
 
-E=pendulum(alpha=3,x0=1.0,time=40)
+E=pendulum(alpha=2,x0=0.1,dt=0.04,time=15)
 E.sway()
-#E.plotTheta(style='purple',slogan='Amplitude=1.0')
-print E.period()
+E.plotTheta(style='purple',slogan='Amplitude=1.0')
+#print E.period()
 # ----------------part 3 of Exercise 8-----------------------------------------
 
 '''
