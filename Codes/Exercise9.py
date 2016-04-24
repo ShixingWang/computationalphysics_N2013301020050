@@ -8,7 +8,7 @@ g=9.8
 q=0.5
 # define constants above
 class Chaos:
-    def __init__(self,Fd=1.2,OmegaD=2./3,alpha=1,theta0=0.2,omega0=0,time=10000,step=100):
+    def __init__(self,Fd=1.2,OmegaD=2./3,alpha=1,theta0=0.2,omega0=0,time=1000,step=1000):
         self.Fd=Fd
         self.OmegaD=OmegaD
         self.theta0=theta0
@@ -18,6 +18,7 @@ class Chaos:
         self.dt=self.cycle/step
         self.time=time
         self.Theta=[self.theta0]
+        self.originTheta=[self.theta0]
         self.Omega=[self.omega0]
         self.T=[0]
         return None
@@ -26,6 +27,7 @@ class Chaos:
             newOmega=self.Omega[-1]+(-math.sin(self.Theta[-1])-q*self.Omega[-1]+self.Fd*math.sin(self.OmegaD*self.T[-1]))*self.dt
             self.Omega.append(newOmega)
             newTheta=self.Theta[-1]+newOmega*self.dt
+            self.originTheta.append(newTheta)
             if newTheta<-math.pi:
                 newTheta=newTheta+2*math.pi
             if newTheta>math.pi:
@@ -51,19 +53,14 @@ class Chaos:
         plt.xticks([-math.pi,-math.pi/2,0,math.pi/2,math.pi],[r'$-\pi$',r'$-\pi/2$',r'$0$',r'$+\pi/2$',r'$+\pi$'])
         plt.scatter(self.Theta,self.Omega,s=0.5,c=color,label=slogan)
         return 0        
-    def PoincareSection(self,init=0,color='black',slogan=''):
+    def PoincareSection(self,init,color,slogan):
         "init is a value from zero to one"
-        plt.title("Poincare Section")
-        plt.xlabel(r'$\theta$ [rad]')
-        plt.ylabel(r'$\omega$ [$s^{-1}$]')
-        plt.xlim(-4,4)
-        plt.xticks([-math.pi,-math.pi/2,0,math.pi/2,math.pi],[r'$-\pi$',r'$-\pi/2$',r'$0$',r'$+\pi/2$',r'$+\pi$'])
         n=int(self.time//self.cycle)
         PoincareTheta=[]
         PoincareOmega=[]
         for i in range(n):
-            PoincareTheta.append(self.Theta[(i+init)*self.step])
-            PoincareOmega.append(self.Omega[(i+init)*self.step])
+            PoincareTheta.append(self.Theta[int((i+init)*self.step)])
+            PoincareOmega.append(self.Omega[int((i+init)*self.step)])
         plt.scatter(PoincareTheta,PoincareOmega,s=0.5,c=color,label=slogan)
         return 0
     def visual(self):
@@ -77,30 +74,37 @@ class Chaos:
             ball.pos=ball.pos+ball.velcity*delta
             t=t+delta            
             i+=1
+'''
+# start of bifurcation diagram
 def bifurcation(init=0,F_D=1.2,frequency=2./3,color='black',slogan=''):
-    B=Chaos(Fd=F_D,OmegaD=frequency,time=400*2*math.pi/frequency)
+    B=Chaos(Fd=F_D,OmegaD=frequency,time=400*2*math.pi/frequency,)
     B.sway()
     bifurcationTheta=[]
-    bifurcationOmega=[]
     for i in range(100):
         bifurcationTheta.append(B.Theta[(300+i+init)*B.step])
-    bifurcationFd=[F_D]*len(bifurcationTheta)
-#        bifurcationOmega.append(self.Omega[(300+i+init)*self.step])
-#    plt.scatter(PoincareTheta,PoincareOmega,s=0.5,c=color,label=slogan)        
+    bifurcationFd=[F_D]*len(bifurcationTheta)   
     return (bifurcationFd,bifurcationTheta)
-
-
 fd=[]
 theta=[]
-for i in np.arange(1.2,1.5,0.001):
+for i in np.arange(1.3,1.48,0.001):
     som=bifurcation(F_D=i)
     fd.extend(som[0])
     theta.extend(som[1])
-plt.scatter(fd,theta,s=0.5,c='black',label='')
+plt.ylim(1,3)
+plt.scatter(fd,theta,s=0.1,c='black',label='')
+# end of bifurcation diagram
+'''
 
-'''
-A=Chaos()
+A=Chaos(time=10000,step=1000)
 A.sway()
-A.PoincareSection()
+plt.title("Poincare Section")
+plt.xlabel(r'$\theta$ [rad]')
+plt.ylabel(r'$\omega$ [$s^{-1}$]')
+plt.xlim(-4,4)
+plt.xticks([-math.pi,-math.pi/2,0,math.pi/2,math.pi],[r'$-\pi$',r'$-\pi/2$',r'$0$',r'$+\pi/2$',r'$+\pi$'])
+A.PoincareSection(init=0,color='b',slogan=r'$t\approx 2\pi n/\Omega_D$')
+A.PoincareSection(init=0.125,color='r',slogan=r'$t\approx 2\pi n/\Omega_D+\pi/4$')
+A.PoincareSection(init=0.25,color='b',slogan=r'$t\approx 2\pi n/\Omega_D+\pi/2$')
+A.PoincareSection(init=0.375,color='g',slogan=r'$t\approx 2\pi n/\Omega_D+3\pi/4$')
+plt.legend(loc='upper right',frameon=False)
 plt.show()
-'''
