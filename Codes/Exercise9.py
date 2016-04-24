@@ -1,18 +1,21 @@
 import math
 import matplotlib.pyplot as plt
 from visual import *
+import numpy as np
 # import modules above
 l=9.8
 g=9.8
 q=0.5
 # define constants above
 class Chaos:
-    def __init__(self,Fd=1.2,OmegaD=2./3,alpha=1,theta0=0.2,omega0=0,time=100,dt=0.001):
+    def __init__(self,Fd=1.2,OmegaD=2./3,alpha=1,theta0=0.2,omega0=0,time=10000,step=100):
         self.Fd=Fd
         self.OmegaD=OmegaD
         self.theta0=theta0
         self.omega0=omega0
-        self.dt=dt
+        self.step=step
+        self.cycle=2*math.pi/OmegaD
+        self.dt=self.cycle/step
         self.time=time
         self.Theta=[self.theta0]
         self.Omega=[self.omega0]
@@ -46,8 +49,23 @@ class Chaos:
         plt.ylabel(r'$\omega$ [$s^{-1}$]')
         plt.xlim(-4,4)
         plt.xticks([-math.pi,-math.pi/2,0,math.pi/2,math.pi],[r'$-\pi$',r'$-\pi/2$',r'$0$',r'$+\pi/2$',r'$+\pi$'])
-        plt.scatter(self.Theta,self.Omega,s=0.01,c=color,label=slogan)
+        plt.scatter(self.Theta,self.Omega,s=0.5,c=color,label=slogan)
         return 0        
+    def PoincareSection(self,init=0,color='black',slogan=''):
+        "init is a value from zero to one"
+        plt.title("Poincare Section")
+        plt.xlabel(r'$\theta$ [rad]')
+        plt.ylabel(r'$\omega$ [$s^{-1}$]')
+        plt.xlim(-4,4)
+        plt.xticks([-math.pi,-math.pi/2,0,math.pi/2,math.pi],[r'$-\pi$',r'$-\pi/2$',r'$0$',r'$+\pi/2$',r'$+\pi$'])
+        n=int(self.time//self.cycle)
+        PoincareTheta=[]
+        PoincareOmega=[]
+        for i in range(n):
+            PoincareTheta.append(self.Theta[(i+init)*self.step])
+            PoincareOmega.append(self.Omega[(i+init)*self.step])
+        plt.scatter(PoincareTheta,PoincareOmega,s=0.5,c=color,label=slogan)
+        return 0
     def visual(self):
         ball=sphere(pos=(self.x0,math.cos(self.theta),0),radius=2,color=color.white)
         t=0
@@ -59,7 +77,30 @@ class Chaos:
             ball.pos=ball.pos+ball.velcity*delta
             t=t+delta            
             i+=1
+def bifurcation(init=0,F_D=1.2,frequency=2./3,color='black',slogan=''):
+    B=Chaos(Fd=F_D,OmegaD=frequency,time=400*2*math.pi/frequency)
+    B.sway()
+    bifurcationTheta=[]
+    bifurcationOmega=[]
+    for i in range(100):
+        bifurcationTheta.append(B.Theta[(300+i+init)*B.step])
+    bifurcationFd=[F_D]*len(bifurcationTheta)
+#        bifurcationOmega.append(self.Omega[(300+i+init)*self.step])
+#    plt.scatter(PoincareTheta,PoincareOmega,s=0.5,c=color,label=slogan)        
+    return (bifurcationFd,bifurcationTheta)
+
+
+fd=[]
+theta=[]
+for i in np.arange(1.2,1.5,0.001):
+    som=bifurcation(F_D=i)
+    fd.extend(som[0])
+    theta.extend(som[1])
+plt.scatter(fd,theta,s=0.5,c='black',label='')
+
+'''
 A=Chaos()
 A.sway()
-A.plotPhase()
+A.PoincareSection()
 plt.show()
+'''
