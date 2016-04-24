@@ -61,7 +61,7 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
     Markdown edition on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise9.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/355301)
 
     - Code      
-     [Exercise8.py](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise9.py)
+     [Exercise9.py](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise9.py)
 
 To be continued...
 
