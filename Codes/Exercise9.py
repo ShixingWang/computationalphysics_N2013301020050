@@ -32,17 +32,21 @@ class Chaos:
             self.T.append(newT)
         return 0
     def plotTheta(self,style='black',slogan=''):
+        plt.title(r"$\theta$ v.s. Time")
         plt.xlabel('Time [s]')
-        plt.ylabel(r'$\theta\quad (rad)$')
+        plt.ylabel(r'$\theta\quad [rad]$')
         plt.xlim(min(self.T),max(self.T))
         plt.ylim(-4,4)
         plt.yticks([-math.pi,-math.pi/2,0,math.pi/2,math.pi],[r'$-\pi$',r'$-\pi/2$',r'$0$',r'$+\pi/2$',r'$+\pi$'])
         plt.plot(self.T,self.Theta,style,label=slogan)
         return 0
     def plotPhase(self,color='black',slogan=''):
+        plt.title("Phase Trajectory")
+        plt.xlabel(r'$\theta$ [rad]')
+        plt.ylabel(r'$\omega$ [$s^{-1}$]')
         plt.xlim(-4,4)
         plt.xticks([-math.pi,-math.pi/2,0,math.pi/2,math.pi],[r'$-\pi$',r'$-\pi/2$',r'$0$',r'$+\pi/2$',r'$+\pi$'])
-        plt.scatter(self.Theta,self.Omega,c=color,label=slogan)
+        plt.scatter(self.Theta,self.Omega,s=0.01,c=color,label=slogan)
         return 0        
     def visual(self):
         ball=sphere(pos=(self.x0,math.cos(self.theta),0),radius=2,color=color.white)
