@@ -51,9 +51,19 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
         [Level 1: Backspin of Batted Baseball](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise7.py)     
         [Level 2: Visualization of Cannon Shell](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise7_2.py)     
 
+* Exercise 8: Problem 3.4 & 3.5 - Anharmonic Oscillator       
+    Markdown edition on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise8.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/346840)
+
+    - Code      
+     [Exercise8.py](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise8.py)
+
+* Exercise 9: Chaos in the Driven Nonlinear Pendulum       
+    Markdown edition on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise9.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/355301)
+
+    - Code      
+     [Exercise8.py](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise9.py)
+
 To be continued...
-
-
 
 
 ## Resources 资源
