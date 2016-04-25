@@ -86,6 +86,8 @@ def bifurcation(init=0,F_D=1.2,frequency=2./3,friction=0.5,color='black',slogan=
         bifurcationTheta.append(B.Theta[(300+i+init)*B.step])
     bifurcationFd=[F_D]*len(bifurcationTheta)   
     return (bifurcationFd,bifurcationTheta)
+
+
 # bifurcation diagram for various OmegaD
 '''
 fd=[]
@@ -94,13 +96,12 @@ for i1 in np.arange(1.3,1.80,0.005):
     som=bifurcation(F_D=i1,frequency=1./2)
     fd.extend(som[0])
     theta.extend(som[1])
-plt.ylim(1,3)
 plt.subplot(221)
 plt.scatter(fd,theta,s=0.1,c='black',label=r'$\Omega_D=1/2$')
 plt.legend(loc='upper right',frameon=False)
 # end of bifurcation diagram
-
-
+'''
+'''
 fd=[]
 theta=[]
 for i2 in np.arange(1.3,1.48,0.001):
@@ -111,8 +112,8 @@ plt.ylim(1,3)
 plt.subplot(222)
 plt.scatter(fd,theta,s=0.1,c='black',label=r'$\Omega_D=2/3$')
 plt.legend(loc='upper right',frameon=False)
-
-
+'''
+'''
 fd=[]
 theta=[]
 for i3 in np.arange(1.8,3.0,0.005):
@@ -123,7 +124,7 @@ plt.ylim(1,3)
 plt.subplot(223)
 plt.scatter(fd,theta,s=0.1,c='black',label=r'$\Omega_D=1$')
 plt.legend(loc='upper right',frameon=False)
-
+'''
 
 fd=[]
 theta=[]
@@ -134,7 +135,7 @@ for i4 in np.arange(1.5,3.,0.01):
 plt.subplot(224)
 plt.scatter(fd,theta,s=0.1,c='black',label=r'$\Omega_D=4/3$')
 plt.legend(loc='upper right',frameon=False)
-'''
+
 # bifurcation diagram for various q
 '''
 fd=[]
@@ -143,20 +144,18 @@ for i1 in np.arange(1.3,1.6,0.005):
     som=bifurcation(F_D=i1,friction=0.4)
     fd.extend(som[0])
     theta.extend(som[1])
-plt.ylim(1,3)
 plt.subplot(221)
 plt.scatter(fd,theta,s=0.1,c='black',label=r'$q=0.4$')
 plt.legend(loc='upper right',frameon=False)
 # end of bifurcation diagram
-
-
+'''
+'''
 fd=[]
 theta=[]
 for i2 in np.arange(1.3,1.48,0.005):
     som=bifurcation(F_D=i2,friction=0.1)
     fd.extend(som[0])
     theta.extend(som[1])
-plt.ylim(1,3)
 plt.subplot(222)
 plt.scatter(fd,theta,s=0.1,c='black',label=r'$q=0.6$')
 plt.legend(loc='upper right',frameon=False)
@@ -168,23 +167,22 @@ for i3 in np.arange(1.3,1.60,0.005):
     som=bifurcation(F_D=i3,friction=0.1)
     fd.extend(som[0])
     theta.extend(som[1])
-plt.ylim(1,3)
 plt.subplot(223)
 plt.scatter(fd,theta,s=0.1,c='black',label=r'$q=0.1$')
 plt.legend(loc='upper right',frameon=False)
-
-
+'''
+'''
 fd=[]
 theta=[]
-for i4 in np.arange(1.6.,2.6,0.01):
+for i4 in np.arange(1.6,2.6,0.01):
     som=bifurcation(F_D=i4,friction=1.)
     fd.extend(som[0])
     theta.extend(som[1])
 plt.subplot(224)
 plt.scatter(fd,theta,s=0.1,c='black',label=r'$q=1$')
 plt.legend(loc='upper right',frameon=False)
+plt.show()
 '''
-
 # Figure 9_2
 '''
 A=Chaos(time=10000,step=1000)
