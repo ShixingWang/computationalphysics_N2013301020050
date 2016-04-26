@@ -108,7 +108,6 @@ for i2 in np.arange(1.3,1.48,0.001):
     som=bifurcation(F_D=i2,frequency=2./3)
     fd.extend(som[0])
     theta.extend(som[1])
-plt.ylim(1,3)
 plt.subplot(222)
 plt.scatter(fd,theta,s=0.1,c='black',label=r'$\Omega_D=2/3$')
 plt.legend(loc='upper right',frameon=False)
