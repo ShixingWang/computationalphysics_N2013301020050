@@ -18,6 +18,7 @@ __2013301020050__
 ----
 
 
+
 ## __Abstract__        
 Chaos is an unpredictable phenomenon in a classical system domineered by the determinnistic classical mechanics. Poincare section and the bifurcation diagram are two ways to present and investigate chaos. The program calculating chaos and showing the plot of angular displacement versus time, the plot of Poincare sections and bifurcation diagram are presented. Also various parameters of the driven amplitude and frequency are tested to investigate the parameter sensitivity of the Poincare section and bifurcation diagram.     
 
