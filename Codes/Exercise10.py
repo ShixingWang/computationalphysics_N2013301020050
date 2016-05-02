@@ -37,54 +37,54 @@ class Lorenz:
             self.Z.append(newZ)
             self.T.append(newT)
             if self.T[-1]>30:
-                if newX<0.01 and newX>-0.01:
+                if newX<0.001 and newX>-0.001:
                     self.Y_x0.append(newY)
                     self.Z_x0.append(newZ)
-                if newY<0.01 and newY>-0.01:
+                if newY<0.001 and newY>-0.001:
                     self.X_y0.append(newX)
                     self.Z_y0.append(newZ)
         return 0
-    def phaseXY(self):
+    def phaseXY(self,slogan):
         plt.title("Phase Plot: y versus x")
         plt.xlabel("x")
         plt.ylabel("y")
-        plt.plot(self.X,self.Y)
+        plt.plot(self.X,self.Y,label=slogan)
         return 0
-    def phaseXZ(self):
-        plt.title("Phase Plot: z versus x")
+    def phaseXZ(self,slogan):
+#        plt.title("Phase Plot: z versus x")
         plt.xlabel("x")
         plt.ylabel("z")
-        plt.plot(self.X,self.Z)
+        plt.plot(self.X,self.Z,label=slogan)
         return 0
-    def phaseYZ(self):
+    def phaseYZ(self,slogan):
         plt.title("Phase Plot: z versus y")
         plt.xlabel("y")
         plt.ylabel("z")
-        plt.plot(self.Y,self.Z)
+        plt.plot(self.Y,self.Z,label=slogan)
         return 0
-    def phase(self):
+    def phase(self,slogan):
         fig = plt.figure()
         ax=fig.add_subplot(111, projection='3d')
-        ax.plot(self.X,self.Y,self.Z)
+        ax.plot(self.X,self.Y,self.Z,label=slogan)
         ax.set_xlabel('x')
         ax.set_ylabel('y')
         ax.set_zlabel('z')
         return 0
-    def phaseYZ0(self):
+    def phaseYZ0(self,slogan):
         plt.title("Phase Space Plot: z versus y when x=0")
         plt.xlabel("y")
         plt.ylabel("z")
-        plt.scatter(self.Y_x0,self.Z_x0,s=0.1,c='b')
+        plt.scatter(self.Y_x0,self.Z_x0,s=0.1,c='b',label=slogan)
         return 0
-    def phaseXZ0(self):
+    def phaseXZ0(self,slogan):
         plt.title("Phase Space Plot: z versus x when y=0")
         plt.xlabel("x")
         plt.ylabel("z")
-        plt.scatter(self.X_y0,self.Z_y0,s=0.1,c='b')
+        plt.scatter(self.X_y0,self.Z_y0,s=0.1,c='b',label=slogan)
         return 0
     def visual(self):
         return 0
-
+'''
 A=Lorenz(time=1000)
 A.caculate()
 
@@ -95,13 +95,36 @@ A.phaseXZ()
 plt.subplot(133)
 A.phaseYZ()
 # Figure 10_1
-
-A.phase()
-# Figure 10_2
 '''
 
+A=Lorenz(r=25,time=1000)
+A.caculate()
+plt.subplot(221)
+A.phaseXZ0(slogan='r=25')
+plt.legend(loc='upper right',frameon=False)
+B=Lorenz(r=50,time=1000)
+B.caculate()
+plt.subplot(222)
+B.phaseXZ0(slogan='r=50')
+plt.legend(loc='upper right',frameon=False)
+C=Lorenz(r=100,time=1000)
+C.caculate()
+plt.subplot(223)
+C.phaseXZ0(slogan='r=100')
+plt.legend(loc='upper right',frameon=False)
+D=Lorenz(r=160,time=1000)
+D.caculate()
+plt.subplot(224)
+D.phaseXZ0(slogan='r=160')
+#plt.ylim(-1,1)
+plt.legend(loc='upper right',frameon=False)
+plt.show()
+# Figure 10_2
+
+'''
 plt.subplot(121)
 A.phaseYZ0()
 plt.subplot(122)
 A.phaseXZ0()
 plt.show()
+'''
