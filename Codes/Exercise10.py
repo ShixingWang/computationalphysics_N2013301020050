@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from visual import *
+from mpl_toolkits.mplot3d import Axes3D
 # import packages
 sigma=10
 b=8./3
@@ -35,12 +36,19 @@ class Lorenz:
             self.Y.append(newY)
             self.Z.append(newZ)
             self.T.append(newT)
-            if newX<0.0001 and newX>-0.0001:
-                self.Y_x0.append(newY)
-                self.Z_x0.append(newZ)
-            if newY<0.1 and newY>-0.1:
-                self.X_y0.append(newX)
-                self.Z_y0.append(newZ)
+            if self.T[-1]>30:
+                if newX<0.01 and newX>-0.01:
+                    self.Y_x0.append(newY)
+                    self.Z_x0.append(newZ)
+                if newY<0.01 and newY>-0.01:
+                    self.X_y0.append(newX)
+                    self.Z_y0.append(newZ)
+        return 0
+    def phaseXY(self):
+        plt.title("Phase Plot: y versus x")
+        plt.xlabel("x")
+        plt.ylabel("y")
+        plt.plot(self.X,self.Y)
         return 0
     def phaseXZ(self):
         plt.title("Phase Plot: z versus x")
@@ -48,22 +56,52 @@ class Lorenz:
         plt.ylabel("z")
         plt.plot(self.X,self.Z)
         return 0
+    def phaseYZ(self):
+        plt.title("Phase Plot: z versus y")
+        plt.xlabel("y")
+        plt.ylabel("z")
+        plt.plot(self.Y,self.Z)
+        return 0
+    def phase(self):
+        fig = plt.figure()
+        ax=fig.add_subplot(111, projection='3d')
+        ax.plot(self.X,self.Y,self.Z)
+        ax.set_xlabel('x')
+        ax.set_ylabel('y')
+        ax.set_zlabel('z')
+        return 0
     def phaseYZ0(self):
         plt.title("Phase Space Plot: z versus y when x=0")
         plt.xlabel("y")
         plt.ylabel("z")
-        plt.scatter(self.Y_x0,self.Z_x0,s=0.1)
+        plt.scatter(self.Y_x0,self.Z_x0,s=0.1,c='b')
         return 0
     def phaseXZ0(self):
         plt.title("Phase Space Plot: z versus x when y=0")
         plt.xlabel("x")
         plt.ylabel("z")
-        plt.scatter(self.X_y0,self.Z_y0,s=0.1)
+        plt.scatter(self.X_y0,self.Z_y0,s=0.1,c='b')
         return 0
     def visual(self):
         return 0
 
-A=Lorenz()
+A=Lorenz(time=1000)
 A.caculate()
+
+plt.subplot(131)
+A.phaseXY()
+plt.subplot(132)
 A.phaseXZ()
+plt.subplot(133)
+A.phaseYZ()
+# Figure 10_1
+
+A.phase()
+# Figure 10_2
+'''
+
+plt.subplot(121)
+A.phaseYZ0()
+plt.subplot(122)
+A.phaseXZ0()
 plt.show()
