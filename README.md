@@ -1,4 +1,4 @@
-﻿# Shixing Wang's Repository for Computational Physics
+﻿# Repository for Computational Physics
 
 __13级弘毅班__       
 __王世兴__       
@@ -74,6 +74,13 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 
     - Code      
      [Exercise11.py](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise11.py)
+
+* Exercise 12: Mercury's Precession due to Jupiter       
+    Markdown edition on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise12.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/376748)
+
+    - Code      
+     [Exercise11.py](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise12.py)
+
 
 To be continued...
 
