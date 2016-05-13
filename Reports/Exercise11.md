@@ -15,7 +15,12 @@ __2013301020050__
 
 ---
 
+
+
 ## Abstract
+
+The precession of the perihelion of Mercury is one of the first test for general relativity theory. Numerically we can treat the relativistic effect as a fix on the inverse-square law of gravitational force. Perihelion are found as the point where the position vector and velocity vector are orthogonal. The precession trajectories and the relationship of the precession angle versus time are presented with the parameter much larger than the true value. Under the same parameter the relaitonship between the angular speed of precession and the eccentricity of the trajectory are given and fitted with the function in the same form of the analytical relation.
+
 ## Background
 
 ### Precession of the Perihelion of Mercury
