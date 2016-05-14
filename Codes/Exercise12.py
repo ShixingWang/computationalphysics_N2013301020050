@@ -21,16 +21,22 @@ class precession:
         yJupiter=Rj*math.sin(self.theta)
         xSun=0
         ySun=0
-        xCenter=MeMs*xEarth+MjMs*xJupiter
-        yCenter=MeMs*yEarth+MjMs*yJupiter
+        xCenter=MeMs*xEarth+self.MjMs*xJupiter
+        yCenter=MeMs*yEarth+self.MjMs*yJupiter
+        vxEarth=0
+        vyEarth=2*math.pi
+        vxSun=0
+        vySun=vyEarth-math.sqrt(GM*(1+MeMs)/Re)
+        vxJupiter=vxSun-math.sqrt(GM*(1+self.MjMs)/Rj)*math.sin(self.theta)
+        vyJupiter=vySun+math.sqrt(GM*(1+self.MjMs)/Rj)*math.cos(self.theta)
         self.x0Earth=xEarth-xCenter
         self.y0Earth=yEarth-yCenter
         self.vx0Earth=0
         self.vy0Earth=math.sqrt(GM*(1+MeMs)/Re)
         self.Xearth=[self.x0Earth]
         self.Yearth=[self.y0Earth]
-        self.VxEarth=[self.vx0Earth]
-        self.VyEarth=[self.vy0Earth]
+        self.VxEarth=[vxEarth]
+        self.VyEarth=[vyEarth]
 # --------------Earth above and Jupiter below----------------------------------
         self.x0Jupiter=xJupiter-xCenter
         self.y0Jupiter=yJupiter-yCenter
@@ -39,17 +45,17 @@ class precession:
         self.vy0Jupiter=self.v0Jupiter*math.cos(self.theta)
         self.Xjupiter=[self.x0Jupiter]
         self.Yjupiter=[self.y0Jupiter]
-        self.VxJupiter=[self.vx0Jupiter]
-        self.VyJupiter=[self.xy0Jupiter]
+        self.VxJupiter=[vxJupiter]
+        self.VyJupiter=[vyJupiter]
 # ----------------Jupiter above and Sun below----------------------------------
         self.x0Sun=xSun-xCenter
         self.y0Sun=ySun-yCenter
-        self.vx0Sun=-MeMs*self.vx0Earth-MjMs*self.vx0Jupiter
-        self.vy0Sun=-MeMs*self.vy0Earth-MjMs*self.vy0Jupiter
+        self.vx0Sun=-MeMs*self.vx0Earth-self.MjMs*self.vx0Jupiter
+        self.vy0Sun=-MeMs*self.vy0Earth-self.MjMs*self.vy0Jupiter
         self.Xsun=[self.x0Sun]
         self.Ysun=[self.y0Sun]
-        self.VxSun=[self.vx0Sun]
-        self.VySun=[self.xy0Sun]        
+        self.VxSun=[vxSun]
+        self.VySun=[vySun]        
 # ---------------Time Relevent and Special Variables below---------------------
         self.T=[0]
         self.dt=dt
@@ -88,62 +94,35 @@ class precession:
             self.Ysun.append(newYsun)              
             self.T.append(self.T[-1]+self.dt)
         return 0
-    def plotMercury(self,color='k',slogan='Mercury'):
-        plt.plot(self.Xmercury,self.Ymercury,color,label=slogan)
-        plt.scatter([0],[0],s=5,c='y',label='Sun')
+    def plot(self,color1='r',slogan1='Sun',color2='b',slogan2='Earth',color3='orange',slogan3='Jupiter'):
+        plt.plot(self.Xsun,self.Ysun,color1,label=slogan1)
+        plt.plot(self.Xearth,self.Yearth,color2,label=slogan2)
+        plt.plot(self.Xjupiter,self.Yjupiter,color3,label=slogan3)
         return 0
-    def plotJupiter(self,color='k',slogan='Jupiter'):
-        plt.plot(self.Xjupiter,self.Yjupiter,color,label=slogan)
-        return 0
-
-A=precession(Mj=100,theta=0,time=20)
+plt.subplot(221)
+plt.xlim(-6,6)
+plt.ylim(-6,6)
+A=precession(Mj=1,theta=0,time=15)
 A.calculate()
-plt.subplot(121)
-A.plotMercury(color='c',slogan='Mercury')
-plt.subplot(122)
-A.orientation()
-'''
-B=precession(e=0.5,time=5.0)
-B.calculate()
-B.plot(color='b',slogan='e=0.5')
+A.plot()
 plt.legend(loc='upper right',frameon=False)
-
-C=precession(e=0.8,time=25)
-C.calculate()
-C.plot(color='g',slogan='e=0.8')
-plt.legend(loc='upper right',frameon=False)
-
-#plt.xlim(-0.5,0.7)
-plt.xlabel("x [AU]")
-plt.ylabel("y [AU]")
-plt.title("Simulation of the precession of Mercury")
-plt.legend(loc='upper right',frameon=False)
-'''
-'''
-A=precession(e=0.206,time=2.)
+plt.subplot(222)
+plt.xlim(-6,6)
+plt.ylim(-6,6)
+A=precession(Mj=10,theta=0,time=15)
 A.calculate()
-A.orientation(color='k',slogan=r'$\alpha=0.0008$')
-plt.xlabel("Time [yr]")
-plt.ylabel(r"$\theta$ [$\degree$]")
-plt.title("Orbit Orientation versus Time")
-'''
-'''
-PrecessionRate=[8.609, 6.129, 4.183, 2.769, 1.737, 0.999, 0.483, 0.146]
-PrecessionRate=np.array(PrecessionRate)
-Eccentricity=[0.206,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
-Eccentricity=np.array(Eccentricity)
-Lower=[8.536,6.095,4.161,2.750,1.720,0.970,0.483,0.132]
-Lower=np.array(Lower)
-Upper=[8.681,6.162,4.204,2.789,1.755,1.028,0.483,0.160]
-Upper=np.array(Upper)
-yUpper=Upper-PrecessionRate
-yLower=PrecessionRate-Lower
-plt.errorbar(Eccentricity,PrecessionRate,yerr=[yLower,yUpper],fmt='b-',ecolor='r',capthick=2,label='Precession Rate versus Eccentricity')
-plt.xlabel("Eccentricity")
-plt.ylabel(r"Precession Rate [$\degree/yr$]")
-plt.title("Precession Rate versus Eccectricity")
-#x=np.arange(0.2,0.95,0.01)
-#y=13.67*np.sqrt((1-x)**3)/(1+x)
-#plt.plot(x,y,'b',label=r'Fiiting Curve $f(x)=a*\sqrt{(1-x)^3}/(1+x)$')
-#plt.legend(loc='upper right',frameon=False)
-'''
+A.plot()
+plt.legend(loc='upper right',frameon=False)
+plt.subplot(223)
+plt.xlim(-6,6)
+plt.ylim(-6,6)
+A=precession(Mj=100,theta=0,time=15)
+A.calculate()
+A.plot()
+plt.legend(loc='upper right',frameon=False)
+plt.subplot(224)
+A=precession(Mj=1000,theta=0,time=15)
+A.calculate()
+A.plot()
+plt.legend(loc='upper right',frameon=False)
+plt.savefig('12_1',transparent=True)
