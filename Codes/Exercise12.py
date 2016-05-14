@@ -1,90 +1,108 @@
 # import packages
 import math
-import numpy as np
+# import numpy as np
 import matplotlib.pyplot as plt
 # physical constants
 GM=4*(math.pi**2)
+Me=0.000003
 MjMs=0.00095 # mass ratio of Jupiter over Sun
-MmMs=0.00000012 # mass ratio of Mercury over Sun
-e=0.206 # eccentricity of Mercury
-aMercury=0.39 # SEMIMAJOR axis of Mercury
-radiusJupiter=5.2  # radius of Jupiter
+MeMs=0.000003 # mass ratio of Earth over Sun
+Re=1. # SEMIMAJOR axis of Mercury
+Rj=5.2  # radius of Jupiter
 # perihelion=0.39*(1-0.206) # to remain the oerihelion the same as that of Mercury.
 
 class precession:
     def __init__(self,Mj=1,theta=0,time=2.,dt=0.0001):
+        self.MjMs=Mj*MjMs
         self.theta=theta*math.pi/180
-#        self.a=perihelion/(1-e)
-        self.x0Mercury=aMercury
-        self.y0Mercury=0
-        self.vx0Mercury=0
-        self.vy0Mercury=math.sqrt((GM*(1-e))(1+MmMs)/(aMercury*(1+e)))
-        self.Xmercury=[self.x0Mercury]
-        self.Ymercury=[self.y0Mercury]
-        self.VxMercury=[self.vx0Mercury]
-        self.VyMercury=[self.vy0Mercury]
-# ------------Mercury above and Jupiter below----------------------------------
-        self.x0Jupiter=radiusJupiter*math.cos(self.theta)
-        self.y0Jupiter=radiusJupiter*math.sin(self.theta)
-        self.v0Jupiter=math.sqrt(GM(1+MjMs)/(radiusJupiter))
+        xEarth=Re
+        yEarth=0
+        xJupiter=Rj*math.cos(self.theta)
+        yJupiter=Rj*math.sin(self.theta)
+        xSun=0
+        ySun=0
+        xCenter=MeMs*xEarth+MjMs*xJupiter
+        yCenter=MeMs*yEarth+MjMs*yJupiter
+        self.x0Earth=xEarth-xCenter
+        self.y0Earth=yEarth-yCenter
+        self.vx0Earth=0
+        self.vy0Earth=math.sqrt(GM*(1+MeMs)/Re)
+        self.Xearth=[self.x0Earth]
+        self.Yearth=[self.y0Earth]
+        self.VxEarth=[self.vx0Earth]
+        self.VyEarth=[self.vy0Earth]
+# --------------Earth above and Jupiter below----------------------------------
+        self.x0Jupiter=xJupiter-xCenter
+        self.y0Jupiter=yJupiter-yCenter
+        self.v0Jupiter=math.sqrt(GM*(1+self.MjMs)/Rj)
         self.vx0Jupiter=-self.v0Jupiter*math.sin(self.theta)
-        self.xy0Jupiter=self.v0Jupiter*math.cos(self.theta)
+        self.vy0Jupiter=self.v0Jupiter*math.cos(self.theta)
         self.Xjupiter=[self.x0Jupiter]
         self.Yjupiter=[self.y0Jupiter]
         self.VxJupiter=[self.vx0Jupiter]
         self.VyJupiter=[self.xy0Jupiter]
-# ---------------Time Relevent Variables below---------------------------------
+# ----------------Jupiter above and Sun below----------------------------------
+        self.x0Sun=xSun-xCenter
+        self.y0Sun=ySun-yCenter
+        self.vx0Sun=-MeMs*self.vx0Earth-MjMs*self.vx0Jupiter
+        self.vy0Sun=-MeMs*self.vy0Earth-MjMs*self.vy0Jupiter
+        self.Xsun=[self.x0Sun]
+        self.Ysun=[self.y0Sun]
+        self.VxSun=[self.vx0Sun]
+        self.VySun=[self.xy0Sun]        
+# ---------------Time Relevent and Special Variables below---------------------
         self.T=[0]
         self.dt=dt
         self.time=time
-        self.PsiPrecession=[]
-        self.TimePrecession=[]
         return None
     def calculate(self):
         while self.T[-1]<self.time:
-            rMercury=math.sqrt(self.Xmercury[-1]**2+self.Ymercury[-1]**2)
-            rJupiter=math.sqrt(self.Xjupiter[-1]**2+self.Yjupiter[-1]**2)
-            rMJ=math.sqrt((self.Xmercury[-1]-self.Xjupiter[-1])**2+(self.Ymercury[-1]-self.Yjupiter[-1])**2)
-            newVxMercury=self.VxMercury[-1]-(GM*self.X[-1]/rMercury**3)*self.dt-(GM*MjMs*(self.Xmercury[-1]-self.Xjupiter[-1])/rMJ**3)*self.dt
-            newXmercury=self.Xmercury[-1]+newVxMercury*self.dt
-            newVyMercury=self.VyMercury[-1]-(GM*self.Ymercury[-1]/rMercury**3)*self.dt-(GM*MjMs*(self.Ymercury[-1]-self.Yjupiter[-1])/rMJ**3)*self.dt
-            newYmercury=self.Ymercury[-1]+newVyMercury*self.dt
-            if abs(newXmercury*newVxMercury+newYmercury*newVyMercury)<0.001 and rMercury<aMercury:
-                psi=math.acos(self.Xmercury[-1]/rMercury)*180/math.pi
-                if (self.Ymercury[-1]/rMercury)<0:
-                    psi=360-psi
-                psi=abs(psi-180)
-                self.PsiPrecession.append(psi)
-                self.TimePrecession.append(self.T[-1])
-            self.VxMercury.append(newVxMercury)
-            self.VyMercury.append(newVyMercury)
-            self.Xmercury.append(newXmercury)
-            self.Ymercury.append(newYmercury)
-            # ---------------Mercury Above and Jupiter Above-------------------
-            newVxJupiter=self.VxJupiter[-1]-(GM*self.Xjupiter[-1]/rJupiter**3)*self.dt-(GM*MmMs*(self.Xjupiter[-1]-self.Xmercury[-1])/rMJ**3)*self.dt
+            rES=math.sqrt((self.Xearth[-1]-self.Xsun[-1])**2+(self.Yearth[-1]-self.Ysun[-1])**2)
+            rJS=math.sqrt((self.Xjupiter[-1]-self.Xsun[-1])**2+(self.Yjupiter[-1]-self.Ysun[-1])**2)
+            rEJ=math.sqrt((self.Xearth[-1]-self.Xjupiter[-1])**2+(self.Yearth[-1]-self.Yjupiter[-1])**2)
+            newVxEarth=self.VxEarth[-1]-(GM*(self.Xearth[-1]-self.Xsun[-1])/rES**3)*self.dt-(GM*self.MjMs*(self.Xearth[-1]-self.Xjupiter[-1])/rEJ**3)*self.dt
+            newXearth=self.Xearth[-1]+newVxEarth*self.dt
+            newVyEarth=self.VyEarth[-1]-(GM*(self.Yearth[-1]-self.Ysun[-1])/rES**3)*self.dt-(GM*self.MjMs*(self.Yearth[-1]-self.Yjupiter[-1])/rEJ**3)*self.dt
+            newYearth=self.Yearth[-1]+newVyEarth*self.dt
+            self.VxEarth.append(newVxEarth)
+            self.VyEarth.append(newVyEarth)
+            self.Xearth.append(newXearth)
+            self.Yearth.append(newYearth)
+            # -----------------Earth Above and Jupiter Above-------------------
+            newVxJupiter=self.VxJupiter[-1]-(GM*(self.Xjupiter[-1]-self.Xsun[-1])/rJS**3)*self.dt-(GM*MeMs*(self.Xjupiter[-1]-self.Xearth[-1])/rEJ**3)*self.dt
             newXjupiter=self.Xjupiter[-1]+newVxJupiter*self.dt
-            newVyJupiter=self.VyJupiter[-1]-(GM*self.Yjupiter[-1]/rJupiter**3)*self.dt-(GM*MmMs*(self.Yjupiter[-1]-self.Ymercury[-1])/rMJ**3)*self.dt
+            newVyJupiter=self.VyJupiter[-1]-(GM*(self.Yjupiter[-1]-self.Ysun[-1])/rJS**3)*self.dt-(GM*MeMs*(self.Yjupiter[-1]-self.Yearth[-1])/rEJ**3)*self.dt
             newYjupiter=self.Yjupiter[-1]+newVyJupiter*self.dt
             self.VxJupiter.append(newVxJupiter)
             self.VyJupiter.append(newVyJupiter)
             self.Xjupiter.append(newXjupiter)
             self.Yjupiter.append(newYjupiter)           
+            # -----------------Jupiter Above and Sun Below---------------------            
+            newVxSun=self.VxSun[-1]-(GM*MeMs*(self.Xsun[-1]-self.Xearth[-1])/rES**3)*self.dt-(GM*self.MjMs*(self.Xsun[-1]-self.Xjupiter[-1])/rJS**3)*self.dt
+            newXsun=self.Xsun[-1]+newVxSun*self.dt
+            newVySun=self.VySun[-1]-(GM*MeMs*(self.Ysun[-1]-self.Yearth[-1])/rES**3)*self.dt-(GM*self.MjMs*(self.Ysun[-1]-self.Yjupiter[-1])/rJS**3)*self.dt
+            newYsun=self.Ysun[-1]+newVySun*self.dt
+            self.VxSun.append(newVxSun)
+            self.VySun.append(newVySun)
+            self.Xsun.append(newXsun)
+            self.Ysun.append(newYsun)              
             self.T.append(self.T[-1]+self.dt)
         return 0
-    def plot(self,color1='k',color2='k',slogan1='',slogan2=''):
-        plt.plot(self.Xmercury,self.Ymercury,color1,label=slogan1)
-        plt.plot(self.Xjupiter,self.Yjupiter,color2,label=slogan2)
+    def plotMercury(self,color='k',slogan='Mercury'):
+        plt.plot(self.Xmercury,self.Ymercury,color,label=slogan)
+        plt.scatter([0],[0],s=5,c='y',label='Sun')
         return 0
-    def orientation(self,color='k',slogan=''):
-        plt.scatter(self.TimePrecession,self.ThetaPrecession,c=color,label=slogan)
-        print self.ThetaPrecession
-        print self.TimePrecession
+    def plotJupiter(self,color='k',slogan='Jupiter'):
+        plt.plot(self.Xjupiter,self.Yjupiter,color,label=slogan)
         return 0
 
-A=precession(e=0.206,time=5)
+A=precession(Mj=100,theta=0,time=20)
 A.calculate()
-A.plot(color='r',slogan=r'e=0.206')
-
+plt.subplot(121)
+A.plotMercury(color='c',slogan='Mercury')
+plt.subplot(122)
+A.orientation()
+'''
 B=precession(e=0.5,time=5.0)
 B.calculate()
 B.plot(color='b',slogan='e=0.5')
@@ -100,7 +118,7 @@ plt.xlabel("x [AU]")
 plt.ylabel("y [AU]")
 plt.title("Simulation of the precession of Mercury")
 plt.legend(loc='upper right',frameon=False)
-
+'''
 '''
 A=precession(e=0.206,time=2.)
 A.calculate()
