@@ -9,7 +9,6 @@ MjMs=0.00095 # mass ratio of Jupiter over Sun
 MeMs=0.000003 # mass ratio of Earth over Sun
 Re=1. # SEMIMAJOR axis of Mercury
 Rj=5.2  # radius of Jupiter
-# perihelion=0.39*(1-0.206) # to remain the oerihelion the same as that of Mercury.
 
 class precession:
     def __init__(self,Mj=1,theta=0,time=2.,dt=0.0001):
@@ -23,12 +22,12 @@ class precession:
         ySun=0
         xCenter=MeMs*xEarth+self.MjMs*xJupiter
         yCenter=MeMs*yEarth+self.MjMs*yJupiter
-        vxEarth=0
-        vyEarth=2*math.pi
-        vxSun=0
-        vySun=vyEarth-math.sqrt(GM*(1+MeMs)/Re)
-        vxJupiter=vxSun-math.sqrt(GM*(1+self.MjMs)/Rj)*math.sin(self.theta)
-        vyJupiter=vySun+math.sqrt(GM*(1+self.MjMs)/Rj)*math.cos(self.theta)
+        vxSun=math.sqrt(GM*(1+self.MjMs)/Rj)*math.sin(self.theta)/(1+MeMs+self.MjMs)
+        vySun=-(MeMs*math.sqrt(GM*(1+MeMs)/Re)+self.MjMs*math.sqrt(GM*(1+self.MjMs)/Rj)*math.cos(self.theta))/(1+MeMs+self.MjMs)
+        vxEarth=self.MjMs*math.sqrt(GM*(1+self.MjMs)/Rj)*math.sin(self.theta)/(1+MeMs+self.MjMs)
+        vyEarth=-(-math.sqrt(GM*(1+MeMs)/Re)-self.MjMs*math.sqrt(GM*(1+MeMs)/Re)+self.MjMs*math.sqrt(GM*(1+self.MjMs)/Rj)*math.cos(self.theta))/(1+MeMs+self.MjMs)
+        vxJupiter=-(1+MeMs)*math.sqrt(GM*(1+self.MjMs)/Rj)*math.sin(self.theta)/(1+MeMs+self.MjMs)
+        vyJupiter=-(MeMs*math.sqrt(GM*(1+MeMs)/Re)-(math.sqrt(GM*(1+self.MjMs)/Rj)*math.cos(self.theta))-(MeMs*math.sqrt(GM*(1+self.MjMs)/Rj)*math.cos(self.theta)))/(1+MeMs+self.MjMs)
         self.x0Earth=xEarth-xCenter
         self.y0Earth=yEarth-yCenter
         self.vx0Earth=0
@@ -99,30 +98,81 @@ class precession:
         plt.plot(self.Xearth,self.Yearth,color2,label=slogan2)
         plt.plot(self.Xjupiter,self.Yjupiter,color3,label=slogan3)
         return 0
+'''
+plt.title('Motion with Different Jupiter Masses')
 plt.subplot(221)
 plt.xlim(-6,6)
-plt.ylim(-6,6)
+plt.ylim(-8,6)
+plt.xlabel('x [AU]')
+plt.ylabel('y [AU]')
 A=precession(Mj=1,theta=0,time=15)
 A.calculate()
 A.plot()
-
+plt.legend(loc='lower right',frameon=False)
 plt.subplot(222)
 plt.xlim(-6,6)
-plt.ylim(-6,6)
+plt.ylim(-8,6)
+plt.xlabel('x [AU]')
+plt.ylabel('y [AU]')
 A=precession(Mj=10,theta=0,time=15)
 A.calculate()
 A.plot()
-
+plt.legend(loc='lower right',frameon=False)
 plt.subplot(223)
 plt.xlim(-6,6)
-plt.ylim(-6,6)
+plt.ylim(-8,6)
+plt.xlabel('x [AU]')
+plt.ylabel('y [AU]')
 A=precession(Mj=100,theta=0,time=15)
 A.calculate()
 A.plot()
 plt.legend(loc='lower right',frameon=False)
 plt.subplot(224)
+plt.xlim(-6,6)
+plt.ylim(-8,6)
+plt.xlabel('x [AU]')
+plt.ylabel('y [AU]')
 A=precession(Mj=1000,theta=0,time=15)
 A.calculate()
 A.plot()
+plt.legend(loc='lower right',frameon=False)
+plt.show()
+'''
 
-plt.savefig('12_2',dpi=100,transparent=True)
+plt.subplot(221)
+plt.xlim(-6,6)
+plt.ylim(-8,6)
+plt.xlabel('x [AU]')
+plt.ylabel('y [AU]')
+A=precession(Mj=100,theta=0,time=15)
+A.calculate()
+A.plot()
+plt.legend(loc='lower right',frameon=False)
+plt.subplot(222)
+#plt.xlim(-6,6)
+#plt.ylim(-8,6)
+plt.xlabel('x [AU]')
+plt.ylabel('y [AU]')
+A=precession(Mj=100,theta=45,time=15)
+A.calculate()
+A.plot()
+plt.legend(loc='lower right',frameon=False)
+plt.subplot(223)
+#plt.xlim(-6,6)
+#plt.ylim(-8,6)
+plt.xlabel('x [AU]')
+plt.ylabel('y [AU]')
+A=precession(Mj=100,theta=90,time=15)
+A.calculate()
+A.plot()
+plt.legend(loc='lower right',frameon=False)
+plt.subplot(224)
+plt.xlim(-6,6)
+plt.ylim(-8,6)
+plt.xlabel('x [AU]')
+plt.ylabel('y [AU]')
+A=precession(Mj=100,theta=180,time=15)
+A.calculate()
+A.plot()
+plt.legend(loc='lower right',frameon=False)
+plt.show()
