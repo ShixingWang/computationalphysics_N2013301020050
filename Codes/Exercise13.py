@@ -42,7 +42,7 @@ class scalarfield():
        self.delta=delta
        self.N=self.N+1
        return None
-    def jacobirun(self):
+    def jacobi(self):
         delta=0.0
         vi=[[1.0 for j in range(self.lx)] for i in range(self.ly)]
         for i in range(self.ly):        
@@ -66,7 +66,7 @@ class scalarfield():
         return None
 
 
-m=50#input('m=')
+m=10#input('m=')
 n=m
 u=scalarfield()
 b1=[0.0 for i in range(m)]
@@ -82,12 +82,88 @@ for i in range(n/2):
     #inbd[i+m/4][m/4]=1.0
     #inbd[i+m/4][3*m/4]=1.0
 u.setinnerboundary(inbd)
-while u.delta>10**-13:
-    #u.jacobi()
-    u.sor()
+while u.delta>10**-7:
+    u.jacobi()
+    #u.sor()
 print(u.N)
 z=u.v
-a=p.subplot(111,projection='3d')
+a=p.subplot(221,projection='3d')
 a.plot_surface(x,y,z,rstride=2,cstride=1,cmap=p.cm.coolwarm,alpha=0.8)
 
 p.show()
+
+m=20#input('m=')
+n=m
+u=scalarfield()
+b1=[0.0 for i in range(m)]
+b2=[0.0 for i in range(n)]
+b3=[0.0 for i in range(m)]
+b4=[0.0 for i in range(n)]
+u.inti(m,n,b1,b2,b3,b4)
+x,y=np.mgrid[0:m:1,0:n:1]
+inbd=[[None for j in range(m)] for i in range(n)]
+for i in range(n/2):
+    inbd[m/4][i+m/4]=1.0
+    inbd[3*m/4][i+m/4]=-1.0
+    #inbd[i+m/4][m/4]=1.0
+    #inbd[i+m/4][3*m/4]=1.0
+u.setinnerboundary(inbd)
+while u.delta>10**-7:
+    u.jacobi()
+    #u.sor()
+print(u.N)
+z=u.v
+a=p.subplot(222,projection='3d')
+a.plot_surface(x,y,z,rstride=2,cstride=1,cmap=p.cm.coolwarm,alpha=0.8)
+
+p.show()
+
+m=30#input('m=')
+n=m
+u=scalarfield()
+b1=[0.0 for i in range(m)]
+b2=[0.0 for i in range(n)]
+b3=[0.0 for i in range(m)]
+b4=[0.0 for i in range(n)]
+u.inti(m,n,b1,b2,b3,b4)
+x,y=np.mgrid[0:m:1,0:n:1]
+inbd=[[None for j in range(m)] for i in range(n)]
+for i in range(n/2):
+    inbd[m/4][i+m/4]=1.0
+    inbd[3*m/4][i+m/4]=-1.0
+    #inbd[i+m/4][m/4]=1.0
+    #inbd[i+m/4][3*m/4]=1.0
+u.setinnerboundary(inbd)
+while u.delta>10**-7:
+    u.jacobi()
+    #u.sor()
+print(u.N)
+z=u.v
+a=p.subplot(223,projection='3d')
+a.plot_surface(x,y,z,rstride=2,cstride=1,cmap=p.cm.coolwarm,alpha=0.8)
+
+p.show()
+
+m=40#input('m=')
+n=m
+u=scalarfield()
+b1=[0.0 for i in range(m)]
+b2=[0.0 for i in range(n)]
+b3=[0.0 for i in range(m)]
+b4=[0.0 for i in range(n)]
+u.inti(m,n,b1,b2,b3,b4)
+x,y=np.mgrid[0:m:1,0:n:1]
+inbd=[[None for j in range(m)] for i in range(n)]
+for i in range(n/2):
+    inbd[m/4][i+m/4]=1.0
+    inbd[3*m/4][i+m/4]=-1.0
+    #inbd[i+m/4][m/4]=1.0
+    #inbd[i+m/4][3*m/4]=1.0
+u.setinnerboundary(inbd)
+while u.delta>10**-7:
+    u.jacobi()
+    #u.sor()
+print(u.N)
+z=u.v
+a=p.subplot(224,projection='3d')
+a.plot_surface(x,y,z,rstride=2,cstride=1,cmap=p.cm.coolwarm,alpha=0.8)
