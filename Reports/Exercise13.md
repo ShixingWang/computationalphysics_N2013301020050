@@ -68,7 +68,9 @@ We used MATLAB to fit the curve with quadrant and linear functions as the result
 ![13_3](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/13_3.png)      
 __Figure 13.3__ Fitting curve of interating time versus time step; the expresssion is given in the figure.
 
-## Reference
+## Reference and Acknowledgment
+
+I must devote my appreciation to Li Yao for his code.
 
 1. Giodano, N.J., Nakanishi, H. Computational Physics. Tsinghua University Press, December 2007
 
