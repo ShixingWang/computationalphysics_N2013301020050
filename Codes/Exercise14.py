@@ -9,7 +9,7 @@ k=1000
 
 class wave:
     """Gaussian Initial Condition, Fixed Boundary Condition"""
-    def __init__(self,x0=0.3,length=1,time=10,dt=0.01):
+    def __init__(self,x0=0.3,length=1,time=30,dt=0.01):
         self.x0=x0
         self.length=length
         self.time=time
@@ -47,13 +47,32 @@ class wave:
         def animate(i):
             x = self.X
             y = self.Y[i]
-            line.set_data(x, y)	  
+            line.set_data(list(x), list(y))	  
             return line,
-        anim1=animation.FuncAnimation(fig, animate, init_func=init, frames=50, interval=10)
+        anim1=animation.FuncAnimation(fig, animate, init_func=init, frames=3000, interval=30)
         plt.show()
+        return 0
 
 A=wave()
 A.calculate()
-#A.plot(1)
+#A.plot(5)
 #print A.Y
-A.movie()
+#print type(A.Y[1])
+
+
+# New figure with white background
+fig = plt.figure(figsize=(6,6), facecolor='white')
+# New axis over the whole figure, no frame and a 1:1 aspect ratio
+ax = plt.axes(xlim=(0, 1), ylim=(-1, 1))
+line, = ax.plot([], [], lw=2)
+def init():  
+    line.set_data([], [])  
+    return line,
+def animate(i):
+    x = A.X
+    y = A.Y[i]
+    line.set_data(list(x), list(y))	  
+    return line,
+anim1=animation.FuncAnimation(fig, animate, init_func=init, frames=100, interval=10)
+plt.show()
+anim1.save('demoanimation.gif', writer='imagemagick', fps=4)
