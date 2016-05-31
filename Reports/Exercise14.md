@@ -17,6 +17,8 @@ __2013301020050__
 
 ## Abstract
 
+Wave propagating along a string is an interesting question involving the time evolution of a dynamical system. The liearity is confirmed in the program that two Gaussian waves propagates independently with their speed and shape unruffled.
+
 ## Background
 
 ### Superposition of Linear Equations
