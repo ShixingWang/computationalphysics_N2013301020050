@@ -84,8 +84,12 @@ This repository is for the Computational Physics course by Prof. Cai from Wuhan 
 * Exercise 13: Potential Field between Finite Capacitor Plates       
     Markdown edition on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise13.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/386050)
 
+* Exercise 14: Two Wavepackets
+
+    Markdown edition on [Github](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Reports/Exercise14.md) and [作业部落](https://www.zybuluo.com/ShixingWang/note/395476)
+
     - Code      
-     [Exercise13.py](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise13.py)
+     [Exercise14.py](https://github.com/ShixingWang/computationalphysics_N2013301020050/blob/master/Codes/Exercise14.py)
 
 
 To be continued...
