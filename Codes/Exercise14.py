@@ -9,8 +9,9 @@ k=1000
 
 class wave:
     """Gaussian Initial Condition, Fixed Boundary Condition"""
-    def __init__(self,x0=0.3,length=1,time=30,dt=0.01):
+    def __init__(self,x0=0.3,x1=0.7,length=1,time=30,dt=0.01):
         self.x0=x0
+        self.x1=x1
         self.length=length
         self.time=time
         self.dt=dt
@@ -18,7 +19,7 @@ class wave:
         self.i=int(length/self.dx)+1
         self.n=time/dt
         self.X=np.linspace(0,length,self.i,endpoint=True)
-        self.Y0=np.exp(-k*(self.X-x0)**2)
+        self.Y0=np.exp(-k*(self.X-x0)**2)+np.exp(-k*(self.X-x1)**2)
         return None
     def calculate(self):
         self.Y=[self.Y0]
@@ -55,11 +56,11 @@ class wave:
 
 A=wave()
 A.calculate()
-#A.plot(5)
+A.plot(0)
 #print A.Y
 #print type(A.Y[1])
 
-
+'''
 # New figure with white background
 fig = plt.figure(figsize=(6,6), facecolor='white')
 # New axis over the whole figure, no frame and a 1:1 aspect ratio
@@ -76,3 +77,4 @@ def animate(i):
 anim1=animation.FuncAnimation(fig, animate, init_func=init, frames=100, interval=10)
 plt.show()
 anim1.save('demoanimation.gif', writer='imagemagick', fps=4)
+'''
