@@ -74,9 +74,12 @@ __Figure 14.1__ Dynamic figure of single Gaussian initial function.
 Then to test the conditions required by the question by adding another Gaussian function with its peak at 0.7m. The initial condition is shown below.
 
 ![14_2](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/14_2.png)      
-__Figure 14.1__ Initial condition of two Gaussian functions.
+__Figure 14.2__ Initial condition of two Gaussian functions.
 
 And the development of the system with time is shown in the gif. We can see that two wavepackets pass through each other without changing shape or speed.
+
+![14_1](https://raw.githubusercontent.com/ShixingWang/computationalphysics_N2013301020050/master/Pictures/14_3.gif)      
+__Figure 14.3__ Time evolution of a string with two Gaussian wave initial condition.
 
 ## Reference
 

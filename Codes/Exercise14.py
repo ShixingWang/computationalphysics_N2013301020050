@@ -56,11 +56,11 @@ class wave:
 
 A=wave()
 A.calculate()
-A.plot(0)
+#A.plot(0)
 #print A.Y
 #print type(A.Y[1])
 
-'''
+
 # New figure with white background
 fig = plt.figure(figsize=(6,6), facecolor='white')
 # New axis over the whole figure, no frame and a 1:1 aspect ratio
@@ -77,4 +77,3 @@ def animate(i):
 anim1=animation.FuncAnimation(fig, animate, init_func=init, frames=100, interval=10)
 plt.show()
 anim1.save('demoanimation.gif', writer='imagemagick', fps=4)
-'''
