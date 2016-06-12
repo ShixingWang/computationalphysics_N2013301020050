@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jun 12 16:45:53 2016
+
+@author: Bories
+"""
+
 # import packages
 import matplotlib.pyplot as plt
 import numpy as np
@@ -40,11 +47,11 @@ class folding:
         position=np.array(position)
         return position#一个二维np.array
         
-    def MonteCarlo(self,position,n,steps):
+    def MonteCarlo(self,n,steps):
         '''n是总的氨基酸数目; steps是总共的蒙卡模拟时间. 'Positions' is a list (or maybe 2-d np.array) that stores every configuration at every step.'''
-        Positions=[position]
-        Energies=[self.energy(configuration=position,order=self.order)]
-        Lengths=[self.distance(position[0],position[-1])]
+        Positions=[self.position]
+        Energies=[self.energy(configuration=self.position,order=self.order)]
+        Lengths=[self.distance(self.position[0],self.position[-1])]
         Steps=[0]
         counter=0
         while counter < steps:
