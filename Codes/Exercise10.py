@@ -84,10 +84,11 @@ class Lorenz:
         return 0
     def visual(self):
         return 0
-'''
+
 A=Lorenz(time=1000)
 A.caculate()
 
+'''
 plt.subplot(131)
 A.phaseXY()
 plt.subplot(132)
@@ -95,7 +96,6 @@ A.phaseXZ()
 plt.subplot(133)
 A.phaseYZ()
 # Figure 10_1
-'''
 
 A=Lorenz(r=25,time=1000)
 A.caculate()
@@ -120,11 +120,10 @@ D.phaseXZ0(slogan='r=160')
 plt.legend(loc='upper right',frameon=False)
 plt.show()
 # Figure 10_2
+'''
 
-'''
 plt.subplot(121)
-A.phaseYZ0()
+A.phaseYZ0(slogan='default')
 plt.subplot(122)
-A.phaseXZ0()
+A.phaseXZ0(slogan='default')
 plt.show()
-'''
