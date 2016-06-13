@@ -166,4 +166,6 @@ Energy=MonteCarlo(position=position,order=order,n=n,steps=steps)[1]
 Length=MonteCarlo(position=position,order=order,n=n,steps=steps)[2]
 Step=MonteCarlo(position=position,order=order,n=n,steps=steps)[3]
 Counter=MonteCarlo(position=position,order=order,n=n,steps=steps)[4]
+
+
     
