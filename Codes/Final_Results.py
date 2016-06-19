@@ -182,14 +182,9 @@ class folding:
             l=None
         return l
 
-A=folding(steps=10)
+A=folding(steps=50000)
 A.MonteCarlo()
 
-print A.Energies
-print A.Lengths
-print A.Positions
-print A.Steps
-'''plt.xticks([0, 10000, 20000, 30000, 40000, 50000],
+plt.xticks([0, 10000, 20000, 30000, 40000, 50000],
        [r'0', r'1', r'2', r'3', r'4', r'5'])
-plt.plot(range(5*10**4),A.Energies)'''
-#print A.position
+plt.plot(A.Steps,A.Energies)
