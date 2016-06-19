@@ -49,118 +49,118 @@ class folding:
         # define the initial configuration as a straight line 
         self.position=self.initConfig(n=self.n)
         # get the final configuration of the peotein.
-        self.finalPosition=self.MonteCarlo()[0][-1]
-        self.Energies=self.MonteCarlo()[1]
-        self.Lengths=self.MonteCarlo()[2]
-        self.Steps=self.MonteCarlo()[3]
+#        self.finalPosition=self.MonteCarlo()[0][-1]
+#        self.Energies=self.MonteCarlo()[1]
+#        self.Lengths=self.MonteCarlo()[2]
+#        self.Steps=self.MonteCarlo()[3]
         
     def initConfig(self,n):
         position=[np.array([0.,0.])]
         for i in range(n-1):
             position.append(position[-1]+np.array([1.,0.]))
         position=np.array(position)
-        return position#一个二维np.array
+        return position #一个二维np.array
         
     def MonteCarlo(self):
         '''n是总的氨基酸数目; steps是总共的蒙卡模拟时间. 'Positions' is a list (or maybe 2-d np.array) that stores every configuration at every step.'''
-        Positions=[self.position]
-        Energies=[self.energy(configuration=self.position)]
-        Lengths=[self.distance(self.position[0],self.position[-1])]
-        Steps=[0]
-        counter=0
-        while counter < self.steps:
+        self.Positions=[self.position]
+        self.Energies=[self.energy(configuration=self.position)]
+        self.Lengths=[self.distance(self.position[0],self.position[-1])]
+        self.Steps=[0]
+        self.counter=0
+        while self.counter < self.steps:
             randomNum=np.random.random_integers(0,self.n-1)
             if randomNum == 0 :
                 randomDirection = np.random.random_integers(0,3)
-                newPosition=Positions[-1][randomNum]+self.direction[randomDirection]
-                if list(newPosition) in np.ndarray.tolist(Positions[-1]): # CHECK the type when debugging
-                    counter=counter+1
+                newPosition=self.Positions[-1][randomNum]+self.direction[randomDirection]
+                if list(newPosition) in np.ndarray.tolist(self.Positions[-1]): # CHECK the type when debugging
+                    self.counter=self.counter+1
                 else:
-                    if self.distance(newPosition,Positions[-1][randomNum+1])==1.:
-                        NewPosition=Positions[-1][:]
+                    if self.distance(newPosition,self.Positions[-1][randomNum+1])==1.:
+                        NewPosition=self.Positions[-1][:]
                         NewPosition[randomNum]=newPosition
                         NewLength=self.distance(NewPosition[0],NewPosition[-1])
                         NewEnergy=self.energy(configuration=NewPosition)                        
-                        deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=Positions[-1])
+                        deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=self.Positions[-1])
                         if self.energy(NewPosition)<0:
-                            Positions.append(NewPosition)
-                            Energies.append(NewEnergy)
-                            Lengths.append(NewLength)
-                            counter=counter+1
-                            Steps.append(counter)
+                            self.Positions.append(NewPosition)
+                            self.Energies.append(NewEnergy)
+                            self.Lengths.append(NewLength)
+                            self.counter=self.counter+1
+                            self.Steps.append(self.counter)
                         else:
                             randomEnergy=np.random.rand()
                             if np.exp(-deltaEnergy/self.kT)>randomEnergy:
-                                Positions.append(NewPosition)
-                                Energies.append(NewEnergy)
-                                Lengths.append(NewLength)
-                                counter=counter+1
-                                Steps.append(counter) 
+                                self.Positions.append(NewPosition)
+                                self.Energies.append(NewEnergy)
+                                self.Lengths.append(NewLength)
+                                self.counter=self.counter+1
+                                self.Steps.append(self.counter) 
                             else:
-                                counter=counter+1
+                                self.counter=self.counter+1
                     else:
-                        counter=counter+1
+                        self.counter=self.counter+1
             elif randomNum == self.n-1 :
                 randomDirection = np.random.random_integers(0,3)
-                newPosition=Positions[-1][randomNum]+self.direction[randomDirection]
-                if list(newPosition) in np.ndarray.tolist(Positions[-1]): # CHECK the type when debugging
-                    counter=counter+1
+                newPosition=self.Positions[-1][randomNum]+self.direction[randomDirection]
+                if list(newPosition) in np.ndarray.tolist(self.Positions[-1]): # CHECK the type when debugging
+                    self.counter=self.counter+1
                 else:
-                    if self.distance(newPosition,Positions[-1][randomNum-1])==1:
-                        NewPosition=Positions[-1][:]
+                    if self.distance(newPosition,self.Positions[-1][randomNum-1])==1:
+                        NewPosition=self.Positions[-1][:]
                         NewPosition[randomNum]=newPosition
                         NewLength=self.distance(NewPosition[0],NewPosition[-1])
                         NewEnergy=self.energy(configuration=NewPosition)                        
-                        deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=Positions[-1])
+                        deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=self.Positions[-1])
                         if self.energy(NewPosition)<0:
-                            Positions.append(NewPosition)
-                            Energies.append(NewEnergy)
-                            Lengths.append(NewLength)
-                            counter=counter+1
-                            Steps.append(counter)
+                            self.Positions.append(NewPosition)
+                            self.Energies.append(NewEnergy)
+                            self.Lengths.append(NewLength)
+                            self.counter=self.counter+1
+                            self.Steps.append(self.counter)
                         else:
                             randomEnergy=np.random.rand()
                             if np.exp(-deltaEnergy/self.kT)>randomEnergy:
-                                Positions.append(NewPosition)
-                                Energies.append(NewEnergy)
-                                Lengths.append(NewLength)
-                                counter=counter+1
-                                Steps.append(counter) 
+                                self.Positions.append(NewPosition)
+                                self.Energies.append(NewEnergy)
+                                self.Lengths.append(NewLength)
+                                self.counter=self.counter+1
+                                self.Steps.append(self.counter) 
                             else:
-                                counter=counter+1
+                                self.counter=self.counter+1
                     else:
-                        counter=counter+1
+                        self.counter=self.counter+1
             else:
                 randomDirection = np.random.random_integers(0,3)
-                newPosition=Positions[-1][randomNum]+self.direction[randomDirection]
-                if list(newPosition) in np.ndarray.tolist(Positions[-1]): # CHECK the type when debugging
-                    counter=counter+1
+                newPosition=self.Positions[-1][randomNum]+self.direction[randomDirection]
+                if list(newPosition) in np.ndarray.tolist(self.Positions[-1]): # CHECK the type when debugging
+                    self.counter=self.counter+1
                 else:
-                    if self.distance(newPosition,Positions[-1][randomNum-1])==1 and self.distance(newPosition,Positions[-1][randomNum+1])==1:
-                        NewPosition=Positions[-1][:]
+                    if self.distance(newPosition,self.Positions[-1][randomNum-1])==1 and self.distance(newPosition,self.Positions[-1][randomNum+1])==1:
+                        NewPosition=self.Positions[-1][:]
                         NewPosition[randomNum]=newPosition
                         NewLength=self.distance(NewPosition[0],NewPosition[-1])
                         NewEnergy=self.energy(configuration=NewPosition)                        
-                        deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=Positions[-1])
+                        deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=self.Positions[-1])
                         if self.energy(configuration=NewPosition)<0:
-                            Positions.append(NewPosition)
-                            Energies.append(NewEnergy)
-                            Lengths.append(NewLength)
-                            counter=counter+1
-                            Steps.append(counter)
+                            self.Positions.append(NewPosition)
+                            self.Energies.append(NewEnergy)
+                            self.Lengths.append(NewLength)
+                            self.counter=self.counter+1
+                            self.Steps.append(self.counter)
                         else:
                             randomEnergy=np.random.rand()
                             if np.exp(-deltaEnergy/self.kT)>randomEnergy:
-                                Positions.append(NewPosition)
-                                Energies.append(NewEnergy)
-                                Lengths.append(NewLength)
-                                counter=counter+1
-                                Steps.append(counter) 
+                                self.Positions.append(NewPosition)
+                                self.Energies.append(NewEnergy)
+                                self.Lengths.append(NewLength)
+                                self.counter=self.counter+1
+                                self.Steps.append(self.counter) 
                             else:
-                                counter=counter+1
+                                self.counter=self.counter+1
                     else:
-                        counter=counter+1
-        return Positions,Energies,Lengths,Steps
+                        self.counter=self.counter+1
+        return None
 
     def energy(self,configuration):
         E=0
@@ -182,9 +182,14 @@ class folding:
             l=None
         return l
 
-A=folding(steps=5*10**4)
+A=folding(steps=10)
+A.MonteCarlo()
+
+print A.Energies
+print A.Lengths
+print A.Positions
+print A.Steps
 '''plt.xticks([0, 10000, 20000, 30000, 40000, 50000],
        [r'0', r'1', r'2', r'3', r'4', r'5'])
 plt.plot(range(5*10**4),A.Energies)'''
-print len(A.Energies)
-print len(A.Steps)
+#print A.position

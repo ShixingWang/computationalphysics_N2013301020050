@@ -12,7 +12,7 @@ used for TEST!!!
 import matplotlib.pyplot as plt
 import numpy as np
 
-n=10
+n=15
 steps=10000
 T=0.010
 randomOrder=True
@@ -38,7 +38,7 @@ def initConfig(n):
     position=np.array(position)
     return position#一个二维np.array
 position=initConfig(n=10)
-
+'''
 # get the final configuration of the peotein.
 
 def energy(configuration,order):
@@ -62,7 +62,7 @@ def distance(a,b):
     return l
 
 def MonteCarlo(position,order,n,steps):
-    '''n是总的氨基酸数目; steps是总共的蒙卡模拟时间. 'Positions' is a list (or maybe 2-d np.array) that stores every configuration at every step.'''
+    ''''''n是总的氨基酸数目; steps是总共的蒙卡模拟时间. 'Positions' is a list (or maybe 2-d np.array) that stores every configuration at every step.''''''
     Positions=[position]
     Energies=[energy(configuration=position,order=order)]
     Lengths=[distance(position[0],position[-1])]
@@ -73,7 +73,7 @@ def MonteCarlo(position,order,n,steps):
         if randomNum == 0 :
             randomDirection = np.random.random_integers(0,3)
             newPosition=Positions[-1][randomNum]+direction[randomDirection]
-            if newPosition in Positions[-1]: # CHECK the type when debugging
+            if list(newPosition) in np.ndarray.tolist(Positions[-1]): # CHECK the type when debugging
                 counter=counter+1
             else:
                 if distance(newPosition,Positions[-1][randomNum+1])==1:
@@ -103,7 +103,7 @@ def MonteCarlo(position,order,n,steps):
         elif randomNum == n-1 :
             randomDirection = np.random.random_integers(0,3)
             newPosition=Positions[-1][randomNum]+direction[randomDirection]
-            if newPosition in Positions[-1]: # CHECK the type when debugging
+            if list(newPosition) in np.ndarray.tolist(Positions[-1]): # CHECK the type when debugging
                 counter=counter+1
             else:
                 if distance(newPosition,Positions[-1][randomNum-1])==1:
@@ -133,7 +133,7 @@ def MonteCarlo(position,order,n,steps):
         else:
             randomDirection = np.random.random_integers(0,3)
             newPosition=Positions[-1][randomNum]+direction[randomDirection]
-            if newPosition in Positions[-1]: # CHECK the type when debugging
+            if list(newPosition) in np.ndarray.tolist(Positions[-1]): # CHECK the type when debugging
                 counter=counter+1
             else:
                 if distance(newPosition,Positions[-1][randomNum-1])==1 and distance(newPosition,Positions[-1][randomNum+1])==1:
@@ -166,6 +166,9 @@ Energy=MonteCarlo(position=position,order=order,n=n,steps=steps)[1]
 Length=MonteCarlo(position=position,order=order,n=n,steps=steps)[2]
 Step=MonteCarlo(position=position,order=order,n=n,steps=steps)[3]
 Counter=MonteCarlo(position=position,order=order,n=n,steps=steps)[4]
+'''
+print position
+
 
 
     
