@@ -9,24 +9,24 @@ Created on Sun Jun 12 16:45:53 2016
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+'''
 J=np.array([[0. for cycle1 in range(20)] for cycle2 in range(20)])
 
-'''
+
 J=2*np.random.random_integers(0,1,size=(20,20))-1
 for cycle1 in range(20):
     for cycle2 in range(cycle1):
         J[cycle1][cycle2]=J[cycle2][cycle1]
+'''
 
-
-J=2*np.random.rand(20,20)-1
+J=2*np.random.rand(20,20)-4
 for cycle1 in range(20):
     for cycle2 in range(cycle1):
         J[cycle1][cycle2]=J[cycle2][cycle1]
-'''
+
 
 class folding:
-    def __init__(self,n=10,steps=10,T=1,randomOrder=True):
+    def __init__(self,n=15,steps=5*10**5,T=10,randomOrder=True):
         '''n is the total number of amino acids; 
         steps is the Monte Carlo simulation lenth; 
         self.order is the list that records the types of the amino acids on each site;
@@ -50,6 +50,9 @@ class folding:
         self.position=self.initConfig(n=self.n)
         # get the final configuration of the peotein.
         self.finalPosition=self.MonteCarlo()[0][-1]
+        self.Energies=self.MonteCarlo()[1]
+        self.Lengths=self.MonteCarlo()[2]
+        self.Steps=self.MonteCarlo()[3]
         
     def initConfig(self,n):
         position=[np.array([0.,0.])]
@@ -178,6 +181,10 @@ class folding:
         else:
             l=None
         return l
-    
-A=folding(steps=1000)
-print A.finalPosition
+
+A=folding(steps=5*10**4)
+'''plt.xticks([0, 10000, 20000, 30000, 40000, 50000],
+       [r'0', r'1', r'2', r'3', r'4', r'5'])
+plt.plot(range(5*10**4),A.Energies)'''
+print len(A.Energies)
+print len(A.Steps)
