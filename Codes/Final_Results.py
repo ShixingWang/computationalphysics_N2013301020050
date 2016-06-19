@@ -23,7 +23,7 @@ J=2*np.random.rand(20,20)-4
 for cycle1 in range(20):
     for cycle2 in range(cycle1):
         J[cycle1][cycle2]=J[cycle2][cycle1]
-
+order=np.random.random_integers(0,19,size=[15])
 
 class folding:
     def __init__(self,n=15,steps=5*10**5,T=10,randomOrder=True):
@@ -39,11 +39,6 @@ class folding:
         self.kT=T
         self.n=n
         self.steps=steps
-        # initialize the types of amino acid at each site on the chain. If randomOrder = True, the amino acids are chosen randomly. 
-        if randomOrder:
-            self.order=np.random.random_integers(0,19,size=[n])
-        else:
-            self.order=np.array(input('input the type order of the amino acids: '))
         # define eight nearest directions 
         self.direction=np.array([[1.,1.],[-1.,1.],[-1.,-1.],[1.,-1.]])
         # define the initial configuration as a straight line 
@@ -168,7 +163,7 @@ class folding:
             j=i+2
             while j < len(configuration):
                 if self.distance(configuration[i],configuration[j])==1:
-                    E=E+J[self.order[i]][self.order[j]]
+                    E=E+J[order[i]][order[j]]
                 j=j+1
         return E
         
@@ -182,9 +177,10 @@ class folding:
             l=None
         return l
 
-A=folding(steps=50000)
+A=folding(steps=500000,T=1)
 A.MonteCarlo()
 
-plt.xticks([0, 10000, 20000, 30000, 40000, 50000],
+plt.ylim(-30,10)
+plt.xticks([0, 100000, 200000, 300000, 400000, 500000],
        [r'0', r'1', r'2', r'3', r'4', r'5'])
 plt.plot(A.Steps,A.Energies)
