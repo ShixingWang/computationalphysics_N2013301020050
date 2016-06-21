@@ -19,14 +19,14 @@ for cycle1 in range(20):
         J[cycle1][cycle2]=J[cycle2][cycle1]
 '''
 
-J=2*np.random.rand(20,20)-6
+J=2*np.random.rand(20,20)-4
 for cycle1 in range(20):
     for cycle2 in range(cycle1):
         J[cycle1][cycle2]=J[cycle2][cycle1]
 order=np.random.random_integers(0,19,size=[15])
 
 class folding:
-    def __init__(self,n=15,steps=5*10**5,T=10,randomOrder=True):
+    def __init__(self,n=15,steps=5*10**4,T=10,randomOrder=True):
         '''n is the total number of amino acids; 
         steps is the Monte Carlo simulation lenth; 
         self.order is the list that records the types of the amino acids on each site;
@@ -67,26 +67,27 @@ class folding:
             randomNum=np.random.random_integers(0,self.n-1)
             if randomNum == 0 :
                 randomDirection = np.random.random_integers(0,3)
-                newPosition=self.Positions[-1][randomNum]+self.direction[randomDirection]
-                if list(newPosition) in np.ndarray.tolist(self.Positions[-1]): # CHECK the type when debugging
+                newPosition=self.Positions[-1][:][randomNum]+self.direction[randomDirection]
+                if list(newPosition[:]) in np.ndarray.tolist(self.Positions[-1][:]): # CHECK the type when debugging
                     self.counter=self.counter+1
                 else:
-                    if self.distance(newPosition,self.Positions[-1][randomNum+1])==1.:
+                    if self.distance(newPosition[:],self.Positions[-1][:][randomNum+1])==1.:
                         NewPosition=self.Positions[-1][:]
-                        NewPosition[randomNum]=newPosition
-                        NewLength=self.distance(NewPosition[0],NewPosition[-1])
-                        NewEnergy=self.energy(configuration=NewPosition)                        
-                        deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=self.Positions[-1])
+                        NewPosition[randomNum]=newPosition[:]
+                        NewLength=self.distance(NewPosition[:][0],NewPosition[:][-1])
+                        NewEnergy=self.energy(configuration=NewPosition[:])                        
+                        deltaEnergy=self.energy(configuration=NewPosition[:])-self.energy(configuration=self.Positions[-1][:])
                         if deltaEnergy<0:
-                            self.Positions.append(NewPosition)
+                            self.Positions.append(NewPosition[:])
                             self.Energies.append(NewEnergy)
                             self.Lengths.append(NewLength)
                             self.counter=self.counter+1
                             self.Steps.append(self.counter)
+                            print self.position
                         else:
                             randomEnergy=np.random.rand()
                             if np.exp(-deltaEnergy/self.kT)>randomEnergy:
-                                self.Positions.append(NewPosition)
+                                self.Positions.append(NewPosition[:])
                                 self.Energies.append(NewEnergy)
                                 self.Lengths.append(NewLength)
                                 self.counter=self.counter+1
@@ -97,18 +98,18 @@ class folding:
                         self.counter=self.counter+1
             elif randomNum == self.n-1 :
                 randomDirection = np.random.random_integers(0,3)
-                newPosition=self.Positions[-1][randomNum]+self.direction[randomDirection]
-                if list(newPosition) in np.ndarray.tolist(self.Positions[-1]): # CHECK the type when debugging
+                newPosition=self.Positions[-1][:][randomNum]+self.direction[randomDirection]
+                if list(newPosition) in np.ndarray.tolist(self.Positions[-1][:]): # CHECK the type when debugging
                     self.counter=self.counter+1
                 else:
-                    if self.distance(newPosition,self.Positions[-1][randomNum-1])==1:
+                    if self.distance(newPosition,self.Positions[-1][:][randomNum-1])==1:
                         NewPosition=self.Positions[-1][:]
-                        NewPosition[randomNum]=newPosition
-                        NewLength=self.distance(NewPosition[0],NewPosition[-1])
-                        NewEnergy=self.energy(configuration=NewPosition)                        
-                        deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=self.Positions[-1])
+                        NewPosition[:][randomNum]=newPosition[:]
+                        NewLength=self.distance(NewPosition[:][0],NewPosition[:][-1])
+                        NewEnergy=self.energy(configuration=NewPosition[:])                        
+                        deltaEnergy=self.energy(configuration=NewPosition[:])-self.energy(configuration=self.Positions[-1][:])
                         if deltaEnergy<0:
-                            self.Positions.append(NewPosition)
+                            self.Positions.append(NewPosition[:])
                             self.Energies.append(NewEnergy)
                             self.Lengths.append(NewLength)
                             self.counter=self.counter+1
@@ -116,7 +117,7 @@ class folding:
                         else:
                             randomEnergy=np.random.rand()
                             if np.exp(-deltaEnergy/self.kT)>randomEnergy:
-                                self.Positions.append(NewPosition)
+                                self.Positions.append(NewPosition[:])
                                 self.Energies.append(NewEnergy)
                                 self.Lengths.append(NewLength)
                                 self.counter=self.counter+1
@@ -127,18 +128,18 @@ class folding:
                         self.counter=self.counter+1
             else:
                 randomDirection = np.random.random_integers(0,3)
-                newPosition=self.Positions[-1][randomNum]+self.direction[randomDirection]
-                if list(newPosition) in np.ndarray.tolist(self.Positions[-1]): # CHECK the type when debugging
+                newPosition=self.Positions[-1][:][randomNum]+self.direction[randomDirection]
+                if list(newPosition) in np.ndarray.tolist(self.Positions[-1][:]): # CHECK the type when debugging
                     self.counter=self.counter+1
                 else:
-                    if self.distance(newPosition,self.Positions[-1][randomNum-1])==1 and self.distance(newPosition,self.Positions[-1][randomNum+1])==1:
+                    if self.distance(newPosition,self.Positions[-1][:][randomNum-1])==1 and self.distance(newPosition,self.Positions[-1][:][randomNum+1])==1:
                         NewPosition=self.Positions[-1][:]
-                        NewPosition[randomNum]=newPosition
-                        NewLength=self.distance(NewPosition[0],NewPosition[-1])
-                        NewEnergy=self.energy(configuration=NewPosition)                        
-                        deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=self.Positions[-1])
+                        NewPosition[:][randomNum]=newPosition[:]
+                        NewLength=self.distance(NewPosition[:][0],NewPosition[:][-1])
+                        NewEnergy=self.energy(configuration=NewPosition[:])                        
+                        deltaEnergy=self.energy(configuration=NewPosition[:])-self.energy(configuration=self.Positions[-1][:])
                         if deltaEnergy<0:
-                            self.Positions.append(NewPosition)
+                            self.Positions.append(NewPosition[:])
                             self.Energies.append(NewEnergy)
                             self.Lengths.append(NewLength)
                             self.counter=self.counter+1
@@ -146,7 +147,7 @@ class folding:
                         else:
                             randomEnergy=np.random.rand()
                             if np.exp(-deltaEnergy/self.kT)>randomEnergy:
-                                self.Positions.append(NewPosition)
+                                self.Positions.append(NewPosition[:])
                                 self.Energies.append(NewEnergy)
                                 self.Lengths.append(NewLength)
                                 self.counter=self.counter+1
@@ -162,7 +163,7 @@ class folding:
         for i in range(len(configuration)-2):
             j=i+2
             while j < len(configuration):
-                if self.distance(configuration[i],configuration[j])==1:
+                if self.distance(configuration[:][i],configuration[:][j])==1:
                     E=E+J[order[i]][order[j]]
                 j=j+1
         return E
@@ -176,60 +177,15 @@ class folding:
         else:
             l=None
         return l
-'''
-A=folding(steps=500000,T=10)
-A.MonteCarlo()
-x=A.Steps
-y1=A.Energies
-y2=A.Lengths
 
-plt.subplot(221)
-plt.ylim(-30,10)
-plt.xticks([0, 100000, 200000, 300000, 400000, 500000],
-       [r'0', r'1', r'2', r'3', r'4', r'5'])
-plt.plot(x,y1)
-plt.subplot(222)
-plt.xticks([0, 100000, 200000, 300000, 400000, 500000],
-       [r'0', r'1', r'2', r'3', r'4', r'5'])
-plt.plot(x,y2)
-
-A=folding(steps=50000,T=1)
-A.MonteCarlo()
-x=A.Steps
-y1=A.Energies
-y2=A.Lengths
-
-plt.subplot(223)
-#plt.ylim(-30,10)
-plt.xticks([0, 100000, 200000, 300000, 400000, 500000],
-       [r'0', r'1', r'2', r'3', r'4', r'5'])
-plt.plot(x,y1)
-plt.subplot(224)
-plt.xticks([0, 100000, 200000, 300000, 400000, 500000],
-       [r'0', r'1', r'2', r'3', r'4', r'5'])
-plt.plot(x,y2)
-#print A.position
-'''
-A=folding(n=15,steps=1000,T=10)
-A.MonteCarlo()
-s=A.Steps
-e=A.Energies
-print s
-print e
-a1=np.transpose(A.Positions[0])
-a2=np.transpose(A.Positions[1])
-a3=np.transpose(A.Positions[25])
-a4=np.transpose(A.Positions[100])
-
-plt.subplot(221)
-plt.plot(a1[0],a1[1])
-plt.scatter(a1[0],a1[1])
-plt.subplot(222)
-plt.plot(a2[0],a2[1])
-plt.scatter(a2[0],a2[1])
-plt.subplot(223)
-plt.plot(a3[0],a3[1])
-plt.scatter(a3[0],a3[1])
-plt.subplot(224)
-plt.plot(a4[0],a4[1])
-plt.scatter(a4[0],a4[1])
+T=np.linspace(10,0,40,endpoint=False)
+E=[]
+for cycleT in T:
+    Ecycle=[]
+    for cycle in range(100):
+        A=folding(steps=1000,T=cycleT)
+        A.MonteCarlo()
+        e=A.Energies[-1]
+        Ecycle.append(e)
+    eMean=sum(Ecycle)/len(Ecycle)
+    E.append(eMean)

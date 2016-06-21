@@ -68,7 +68,7 @@ class folding:
                         NewLength=self.distance(NewPosition[0],NewPosition[-1])
                         NewEnergy=self.energy(configuration=NewPosition)                        
                         deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=Positions[-1])
-                        if self.energy(NewPosition)<0:
+                        if deltaEnergy<0:
                             Positions.append(NewPosition)
                             Energies.append(NewEnergy)
                             Lengths.append(NewLength)
@@ -98,7 +98,7 @@ class folding:
                         NewLength=self.distance(NewPosition[0],NewPosition[-1])
                         NewEnergy=self.energy(configuration=NewPosition)                        
                         deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=Positions[-1])
-                        if self.energy(NewPosition)<0:
+                        if deltaEnergy<0:
                             Positions.append(NewPosition)
                             Energies.append(NewEnergy)
                             Lengths.append(NewLength)
@@ -128,7 +128,7 @@ class folding:
                         NewLength=self.distance(NewPosition[0],NewPosition[-1])
                         NewEnergy=self.energy(configuration=NewPosition)                        
                         deltaEnergy=self.energy(configuration=NewPosition)-self.energy(configuration=Positions[-1])
-                        if self.energy(configuration=NewPosition)<0:
+                        if deltaEnergy<0:
                             Positions.append(NewPosition)
                             Energies.append(NewEnergy)
                             Lengths.append(NewLength)
