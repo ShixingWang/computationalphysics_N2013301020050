@@ -1,1 +1,1 @@
-This fold contains codes of exercises.
+This folder contains codes of exercises.
